@@ -1,0 +1,99 @@
+---
+transition: fade-out
+layout: section
+color: violet
+---
+
+# A 10x Faster TypeScript
+
+Port TypeScript by Golang
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: violet
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# A 10x Faster TypeScript
+
+:: content ::
+
+- Fater compile time
+- Reduce memory usage
+- Improve TypeScript Language Server Protocol (LSP)
+- <strong>AI</strong> tools to enhance development
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: violet
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# A 10x Faster TypeScript
+
+:: content ::
+
+# How Much Faster?
+
+|**Project**|**Lines of Code**|**Current**|**Native**|**Speedup**|
+|--------|--------|--------|--------|--------|
+|VS Code|1,505,000|77.8s|7.5s|10.4x|
+|Playwright|356,000|11.1s|1.1s|10.1x|
+|TypeORM|	270,000|17.5s|1.3s|13.5x|
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: violet
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# A 10x Faster TypeScript
+
+:: content ::
+
+# Why Go?
+
+- <a href="https://github.com/microsoft/typescript-go/discussions/411" target="_blank">Dicussion</a>
+- Low level
+- Easy to port
+- Built-in concurrency
+<div style="padding: 0 24px 16px;">
+```go  {monaco}
+go f(x, y, z)
+```
+</div>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: violet
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# A 10x Faster TypeScript
+
+:: content ::
+
+# Developer Roadmap
+
+- TypeScript 6 (JS) will introduce some deprecations and breaking changes
+- TypeScript 7.0 (Go)
