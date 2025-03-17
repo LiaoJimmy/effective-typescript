@@ -93,6 +93,34 @@ align: rm-lm
 
 :: content ::
 
+# Easy to port
+
+- Hyrum's Law
+- Port, not rewrite
+
+<v-click>
+<br/>
+<b>Which language is TypeScript written in?</b>
+</v-click>
+<v-click>
+<p>Answer: TypeScript is written in TypeScript now</p>
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# A 10x Faster TypeScript
+
+:: content ::
+
 # Developer Roadmap
 
 - TypeScript 6 (JS) will introduce some deprecations and breaking changes
