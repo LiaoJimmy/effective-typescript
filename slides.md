@@ -87,7 +87,7 @@ src: ./pages/ts-go.md
 ---
 transition: fade-out
 layout: section
-color: violet
+color: sky-light
 ---
 
 # Q & A
@@ -95,7 +95,7 @@ color: violet
 ---
 transition: fade-out
 layout: section
-color: violet
+color: yellow-light
 ---
 
 # Thank you for listening

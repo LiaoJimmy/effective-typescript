@@ -2,7 +2,7 @@
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: sky-light
 titlewidth: is-4
 align: rm-lm
 
@@ -46,7 +46,7 @@ function fetchPages() {
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: sky-light
 titlewidth: is-4
 align: rm-lm
 

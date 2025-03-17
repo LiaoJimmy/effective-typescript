@@ -2,7 +2,7 @@
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 

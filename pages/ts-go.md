@@ -1,7 +1,7 @@
 ---
 transition: fade-out
 layout: section
-color: violet
+color: pink-light
 ---
 
 # A 10x Faster TypeScript
@@ -12,7 +12,7 @@ Port TypeScript by Golang
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 
@@ -32,7 +32,7 @@ align: rm-lm
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 
@@ -55,7 +55,7 @@ align: rm-lm
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 
@@ -82,7 +82,7 @@ go f(x, y, z)
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 

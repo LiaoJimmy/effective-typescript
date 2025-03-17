@@ -1,7 +1,7 @@
 ---
 transition: fade-out
 layout: section
-color: violet
+color: yellow-light
 ---
 
 # Running TypeScript code with Node.js 22
@@ -12,7 +12,7 @@ Since V22.6.0, Node.js has experimental support for some TypeScript syntax via "
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: yellow-light
 titlewidth: is-4
 align: rm-lm
 
@@ -56,7 +56,7 @@ console.log(test());
 transition: fade-out
 layout: side-title
 side: l
-color: violet
+color: yellow-light
 titlewidth: is-4
 align: rm-lm
 
