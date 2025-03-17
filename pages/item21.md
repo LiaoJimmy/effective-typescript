@@ -11,6 +11,8 @@ align: rm-lm
 
 # Item 21
 
+<ChiikawaItem2e text="Item 20 in 2e" />
+
 :: content ::
 
 <v-click>
@@ -51,6 +53,8 @@ align: rm-lm
 
 # Item 21
 
+<ChiikawaItem2e text="Item 20 in 2e" />
+
 :: content ::
 
 # as const
@@ -86,6 +90,8 @@ align: rm-lm
 
 # Item 21
 
+<ChiikawaItem2e text="Item 20 in 2e" />
+
 :: content ::
 
 # Object.freeze()
@@ -120,6 +126,8 @@ align: rm-lm
 
 # Item 21
 
+<ChiikawaItem2e text="Item 20 in 2e" />
+
 :: content ::
 
 # satisfies
@@ -148,6 +156,8 @@ align: rm-lm
 :: title ::
 
 # Item 21
+
+<ChiikawaItem2e text="Item 20 in 2e" />
 
 :: content ::
 
