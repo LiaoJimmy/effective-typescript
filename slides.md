@@ -57,7 +57,23 @@ align: l
 <Sit />
 
 ---
-src: ./pages/item21-25.md
+src: ./pages/item21.md
+---
+
+---
+src: ./pages/item22.md
+---
+
+---
+src: ./pages/item23.md
+---
+
+---
+src: ./pages/item24.md
+---
+
+---
+src: ./pages/item25.md
 ---
 
 ---
