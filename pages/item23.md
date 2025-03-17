@@ -11,6 +11,8 @@ align: rm-lm
 
 # Item 23
 
+<UsagiItem2e text="Item 21 (2e)"/>
+
 :: content ::
 
 # Create Objects All at Once
@@ -45,6 +47,8 @@ align: rm-lm
 :: title ::
 
 # Item 23
+
+<UsagiItem2e text="Item 21 (2e)"/>
 
 :: content ::
 

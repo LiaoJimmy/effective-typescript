@@ -11,6 +11,8 @@ align: rm-lm
 
 # Item 24
 
+<ChiikawaItem2e text="Item 23 (2e)" />
+
 :: content ::
 
 # Aliasing can prevent TypeScript from narrowing types.

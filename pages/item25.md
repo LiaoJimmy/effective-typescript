@@ -11,6 +11,8 @@ align: rm-lm
 
 # Item 25
 
+<HachiwareItem2e text="Item 27 (2e)"/>
+
 :: content ::
 
 # Prefer async/await to raw Promises
@@ -54,6 +56,8 @@ align: rm-lm
 :: title ::
 
 # Item 25
+
+<HachiwareItem2e text="Item 27 (2e)"/>
 
 :: content ::
 

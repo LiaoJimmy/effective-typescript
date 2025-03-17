@@ -11,7 +11,7 @@ align: rm-lm
 
 # Item 21
 
-<ChiikawaItem2e text="Item 20 in 2e" />
+<ChiikawaItem2e text="Item 20 (2e)" />
 
 :: content ::
 
@@ -53,7 +53,7 @@ align: rm-lm
 
 # Item 21
 
-<ChiikawaItem2e text="Item 20 in 2e" />
+<ChiikawaItem2e text="Item 20 (2e)" />
 
 :: content ::
 
@@ -90,7 +90,7 @@ align: rm-lm
 
 # Item 21
 
-<ChiikawaItem2e text="Item 20 in 2e" />
+<ChiikawaItem2e text="Item 20 (2e)" />
 
 :: content ::
 
@@ -126,7 +126,7 @@ align: rm-lm
 
 # Item 21
 
-<ChiikawaItem2e text="Item 20 in 2e" />
+<ChiikawaItem2e text="Item 20 (2e)" />
 
 :: content ::
 
@@ -157,7 +157,7 @@ align: rm-lm
 
 # Item 21
 
-<ChiikawaItem2e text="Item 20 in 2e" />
+<ChiikawaItem2e text="Item 20 (2e)" />
 
 :: content ::
 

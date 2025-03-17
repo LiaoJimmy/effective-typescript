@@ -11,6 +11,8 @@ align: rm-lm
 
 # Item 22
 
+<HachiwareItem2e text="Item 22 (2e)"/>
+
 :: content ::
 
 # Use in keyword to narrow
@@ -42,6 +44,8 @@ align: rm-lm
 
 # Item 22
 
+<HachiwareItem2e text="Item 22 (2e)"/>
+
 :: content ::
 
 # null is object
@@ -66,6 +70,8 @@ align: rm-lm
 :: title ::
 
 # Item 22
+
+<HachiwareItem2e text="Item 22 (2e)"/>
 
 :: content ::
 
@@ -95,10 +101,16 @@ authorsize: text-s
 author: 'Hyrum''s Law'
 
 ---
+
 "With a sufficient number of users of an API,
 it does not matter what you promise in the contract:
 all observable behaviors of your system
 will be depended on by somebody."
+
+<div class="flex justify-center mt-4">
+  <img src="/images/ChikawaDraw.png" width="300px" />
+</div>
+
 
 ---
 transition: fade-out
@@ -112,6 +124,8 @@ align: rm-lm
 :: title ::
 
 # Item 22
+
+<HachiwareItem2e text="Item 22 (2e)"/>
 
 :: content ::
 
@@ -138,6 +152,8 @@ align: rm-lm
 :: title ::
 
 # Item 22
+
+<HachiwareItem2e text="Item 22 (2e)"/>
 
 :: content ::
 
@@ -184,6 +200,8 @@ align: rm-lm
 :: title ::
 
 # Item 22
+
+<HachiwareItem2e text="Item 22 (2e)"/>
 
 :: content ::
 
