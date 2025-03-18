@@ -23,7 +23,7 @@ align: rm-lm
 
 :: content ::
 
-- Fater compile time
+- Faster compile time
 - Reduce memory usage
 - Improve TypeScript Language Server Protocol (LSP)
 - <strong>AI</strong> tools to enhance development
@@ -68,7 +68,7 @@ align: rm-lm
 
 # Why Go?
 
-- <a href="https://github.com/microsoft/typescript-go/discussions/411" target="_blank">Dicussion</a>
+- <a href="https://github.com/microsoft/typescript-go/discussions/411" target="_blank">Discussion</a>
 - Low level
 - Easy to port
 - Built-in concurrency
@@ -123,5 +123,5 @@ align: rm-lm
 
 # Developer Roadmap
 
-- TypeScript 6 (JS) will introduce some deprecations and breaking changes
+- TypeScript 6 (TS) will introduce some deprecations and breaking changes
 - TypeScript 7.0 (Go)
