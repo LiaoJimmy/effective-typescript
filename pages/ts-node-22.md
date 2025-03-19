@@ -42,7 +42,7 @@ node --experimental-strip-types example.ts
 
 <v-click>
 <br />
-<b>Question: How about this TS code in Node.js?</b>
+<b>Question: Can we run this TypeScript code in Node.js?</b>
 ```ts {monaco}
 function test(): number {
   return 'hello';

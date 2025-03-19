@@ -131,7 +131,7 @@ align: rm-lm
 :: content ::
 
 # satisfies
-Satisfies operator ensures that a value, well, satisfies the requirements of a type and guides inference by preventing TypeScript from inferring a wider type.
+Satisfies operator ensures that a value, satisfies the requirements of a type and guides inference by preventing TypeScript from inferring a wider type.
 
 ```ts {monaco}
 type Point = [number, number];

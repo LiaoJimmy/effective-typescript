@@ -97,7 +97,7 @@ align: rm-lm
 
 - Hyrum's Law
 - Port, not rewrite
-- Only plain object and function in TS codebase
+- Only plain object and function in TypeScript codebase
   - (No OOP and Inheritance)
 
 <v-click>
