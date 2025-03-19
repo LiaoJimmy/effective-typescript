@@ -4,9 +4,13 @@ layout: section
 color: yellow-light
 ---
 
-# Running TypeScript code with Node.js 22
 
-Since V22.6.0, Node.js has experimental support for some TypeScript syntax via "type stripping". You can write code that's valid TypeScript directly in Node.js without the need to transpile it first.
+<div class="text-center">
+  <h1> Running TypeScript code with Node.js 22</h1>
+  <p>Since V22.6.0, Node.js has experimental support</p>
+  <p>for some TypeScript syntax via "type stripping".</p>
+  <Yaha />
+</div>
 
 ---
 transition: fade-out

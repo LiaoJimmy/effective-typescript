@@ -4,9 +4,11 @@ layout: section
 color: pink-light
 ---
 
-# A 10x Faster TypeScript
-
-Port TypeScript by Golang
+<div class="text-center">
+  <h1>A 10x Faster TypeScript</h1>
+  Port TypeScript by Golang
+  <Oh />
+</div>
 
 ---
 transition: fade-out

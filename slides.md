@@ -79,10 +79,13 @@ src: ./pages/ts-go.md
 ---
 transition: fade-out
 layout: section
-color: sky-light
+color: sky-light  
 ---
 
-# Q & A
+<div class="text-center">
+  <h1> Q & A</h1>
+  <Thanks />
+</div>
 
 ---
 transition: fade-out
@@ -90,4 +93,7 @@ layout: section
 color: yellow-light
 ---
 
-# Thank you for listening
+<div class="text-center">
+  <h1>Thank you for listening</h1>
+  <Pekori />
+</div>
