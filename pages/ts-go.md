@@ -97,14 +97,48 @@ align: rm-lm
 
 - Hyrum's Law
 - Port, not rewrite
+- Only plain object and function in TS codebase
+  - (No OOP and Inheritance)
 
 <v-click>
 <br/>
 <b>Which language is TypeScript written in?</b>
 </v-click>
 <v-click>
-<p>Answer: TypeScript is written in TypeScript now</p>
+<p>Answer: TypeScript is written in TypeScript now (<a href="https://en.wikipedia.org/wiki/Self-hosting_(compilers)" target="_blank">Self-hosting</a>)</p>
 </v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# A 10x Faster TypeScript
+
+:: content ::
+
+# Try typescript-go
+
+<a href="https://go.dev/doc/install" target="_blank">Install Go</a>
+- Build typescript-go
+```shell
+git clone https://github.com/microsoft/typescript-go/;
+cd typescript-go;
+npm install -D hereby;
+hereby build;
+```
+
+- Run typescript-go
+```shell
+cd ~/your-project;
+~/your-typescript-go/built/local/tsgo -noEmit;
+``` 
 
 ---
 transition: fade-out
