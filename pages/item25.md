@@ -28,6 +28,7 @@ async function fetchPages() {
     // ...
   }
 }
+await fetchPages();
 ```
 
 <v-click>
@@ -41,6 +42,7 @@ function fetchPages() {
   
   })
 }
+fetchPages();
 ```
 </v-click>
 
@@ -66,8 +68,8 @@ align: rm-lm
 <v-click>
 You can use the await keyword on its own (outside of an async function) at the top level of a module.
 ```ts {monaco}
-function findAnswer() {
-  return new Promise((resolve, reject) => {
+const findAnswer = async () => {
+  return new Promise<string>((resolve, _) => {
     resolve('answer');
   });
 }

@@ -29,6 +29,7 @@ function pickFruit(fruit: Apple | Orange) {
   }
   fruit
 }
+pickFruit({ isGoodForBaking: true });
 ```
 
 ---
@@ -137,6 +138,7 @@ function maybeLogX(x?: number | string | null) {
     x
   }
 }
+maybeLogX();
 
 ```
 
@@ -185,7 +187,7 @@ function checkNetwork (network: NetworkState){
     network
   }
 }
-
+checkNetwork({ state: 'loading' });
 ```
 
 ---
@@ -218,6 +220,7 @@ function getElementContent(element: HTMLElement) {
   }
   return element.textContent;
 }
+getElementContent(document.getElementById('submit')!);
 
 const formElements = document.querySelectorAll('.register-form *');
 const formInputElements = [...formElements].filter(isInputElement);

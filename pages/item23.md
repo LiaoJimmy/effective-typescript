@@ -63,4 +63,5 @@ const getPresidentName = (hasMiddle = true) => {
   };
   return president;
 }
+getPresidentName();
 ```

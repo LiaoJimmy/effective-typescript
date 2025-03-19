@@ -41,5 +41,5 @@ function isPointInPolygon(polygon: Polygon, pt: Coordinate) {
     }
   }
 }
-
+isPointInPolygon({boundingBox: { x: [0, 10], y: [0, 10] }}, { x: 5, y: 5 });
 ```
