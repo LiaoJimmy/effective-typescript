@@ -73,7 +73,7 @@ align: rm-lm
 - Easy to port
 - Built-in concurrency
 <div style="padding: 0 24px 16px;">
-```go  {monaco}
+```go
 go f(x, y, z)
 ```
 </div>

@@ -44,7 +44,7 @@ align: l
 
 - A 10x Faster TypeScript
 
-- <a href="https://sli.dev/" target="_blank">slidev</a>
+- This slide is made by <a href="https://sli.dev/" target="_blank">slidev</a>
 
 <Sit />
 
