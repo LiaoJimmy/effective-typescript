@@ -52,9 +52,9 @@ align: rm-lm
 # null is object
 
 ```ts {monaco}
-const elem = document.getElementById('what-time-is-it');
-if (typeof elem === 'object') {
-  elem;
+const element = document.getElementById('what-time-is-it');
+if (typeof element === 'object') {
+  element;
 }
 
 ```
