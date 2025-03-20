@@ -108,8 +108,14 @@ it does not matter what you promise in the contract:
 all observable behaviors of your system
 will be depended on by somebody."
 
-<div class="flex justify-center mt-4">
+<div class="flex justify-center mt-8">
   <img src="/images/ChikawaDraw.png" width="300px" />
+  <style>
+    .quote_author {
+      font-size: 32px;
+      font-weight: bold;
+    }
+  </style>
 </div>
 
 
