@@ -10,6 +10,11 @@ color: yellow-light
   <p>Since V22.6.0, Node.js has experimental support</p>
   <p>for some TypeScript syntax via "type stripping".</p>
   <Yaha />
+  <style>
+    .section.slidecolor {
+      background-color: white;
+    }
+  </style>
 </div>
 
 ---

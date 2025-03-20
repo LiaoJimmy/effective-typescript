@@ -20,9 +20,9 @@ Item 21 ~ Item 25
 
 <ChiikawaX3 />
 <style>
-.slidev-layout.cover h1, .slidev-layout.cover h2, .slidev-layout.cover h3 {
-  border-bottom: 1px solid #ec4899;
-}
+  .slidev-layout.cover h1, .slidev-layout.cover h2, .slidev-layout.cover h3 {
+    border-bottom: 1px solid #ec4899;
+  }
 </style>
 
 ---
