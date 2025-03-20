@@ -25,6 +25,23 @@ align: rm-lm
 
 :: content ::
 
+<Youtube id="pNlq-EVld70" width="550px" height="300px"/>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# A 10x Faster TypeScript
+
+:: content ::
+
 - Faster compile time
 - Reduce memory usage
 - Improve TypeScript Language Server Protocol (LSP)
