@@ -76,6 +76,40 @@ align: rm-lm
 
 :: content ::
 
+# Strip types, not check types  
+
+````md magic-move
+```ts
+function test(): number {
+  return 'hello';
+}
+
+console.log(test());
+```
+```ts
+"use strict";
+function test() {
+    return 'hello';
+}
+console.log(test());
+```
+````
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: yellow-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Running TypeScript code with Node.js 22
+
+:: content ::
+
 # experimental-transform-types flag
 In v22.7.0 this experimental support was extended to transform TypeScript-only syntax, like enums and namespace, with the addition of the --experimental-transform-types flag.
 
@@ -92,3 +126,40 @@ console.log(MyEnum.A);
 ```bash {monaco}
 node --experimental-transform-types enum-example.ts
 ```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: yellow-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Running TypeScript code with Node.js 22
+
+:: content ::
+
+# Transform TypeScript-only syntax
+````md magic-move
+```ts
+enum MyEnum {
+  A,
+  B,
+}
+
+
+console.log(MyEnum.A);
+```
+```ts
+"use strict";
+var MyEnum;
+(function (MyEnum) {
+    MyEnum[MyEnum["A"] = 0] = "A";
+    MyEnum[MyEnum["B"] = 1] = "B";
+})(MyEnum || (MyEnum = {}));
+console.log(MyEnum.A);
+```
+````
