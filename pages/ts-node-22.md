@@ -35,8 +35,6 @@ align: rm-lm
 # experimental-strip-types flag
 From v23 onwards, the --experimental-strip-types flag is enabled by default
 
-example.ts
-
 ```ts {monaco}
 function test(): string {
   return 'hello';
