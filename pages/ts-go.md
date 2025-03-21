@@ -6,7 +6,7 @@ color: pink-light
 
 <div class="text-center">
   <h1>A 10x Faster TypeScript</h1>
-  Port TypeScript by Golang
+  Port TypeScript by Go
   <Oh />
 </div>
 
@@ -64,7 +64,7 @@ align: rm-lm
 
 # How Much Faster?
 
-|**Project**|**Lines of Code**|**Current**|**Native**|**Speedup**|
+|**Project**|**Lines of Code**|**Current(JS)**|**Native(Go)**|**Speedup**|
 |--------|--------|--------|--------|--------|
 |VS Code|1,505,000|77.8s|7.5s|10.4x|
 |Playwright|356,000|11.1s|1.1s|10.1x|
@@ -158,6 +158,47 @@ hereby build;
 cd ~/your-project;
 ~/your-typescript-go/built/local/tsgo -noEmit;
 ``` 
+
+---
+transition: fade-out
+layout: top-title
+color: pink-light
+align: l
+---
+
+:: title ::
+
+# JIT & AOT
+
+:: content ::
+
+<h1>JavaScript, JIT (Just-In-Time)</h1>
+<v-click>
+```mermaid {theme: 'base'}
+graph LR
+    A[Run] --> B[Source Code];
+    B --> C[Compile];
+    C[Compile] --> D[Machine Code];
+    D --> E[Run Time];
+```
+</v-click>
+<br />
+<h1>Go, AOT (Ahead-Of-Time)</h1>
+<v-click>
+```mermaid
+graph LR
+    A[Compile] --> B[Source Code];
+    B --> C[Compiler];
+    C --> D[Binary File];
+```
+</v-click>
+<v-click>
+```mermaid  {theme: 'base'}
+graph LR
+    E[Run Binary File] --> F[Machine Code];
+    F --> G[Run Time];
+``` 
+</v-click>
 
 ---
 transition: fade-out
