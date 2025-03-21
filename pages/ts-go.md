@@ -185,7 +185,7 @@ graph LR
 <br />
 <h1>Go, AOT (Ahead-Of-Time)</h1>
 <v-click>
-```mermaid
+```mermaid  {theme: 'default'}
 graph LR
     A[Compile] --> B[Source Code];
     B --> C[Compiler];
