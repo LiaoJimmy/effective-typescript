@@ -7,7 +7,9 @@ color: pink-light
 <div class="text-center">
   <h1>A 10x Faster TypeScript</h1>
   Port TypeScript by Go
-  <Oh />
+  <div class="flex items-center justify-center mt-8">
+    <img src="/images/Oh.png" width="150px" />
+  </div>
 </div>
 
 ---

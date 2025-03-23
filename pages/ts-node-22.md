@@ -9,7 +9,9 @@ color: yellow-light
   <h1> Running TypeScript code with Node.js 22</h1>
   <p>Since V22.6.0, Node.js has experimental support</p>
   <p>for some TypeScript syntax via "type stripping".</p>
-  <Yaha />
+  <div class="flex items-center justify-center mt-8">
+    <img src="/images/Yaha.png" width="150px" />
+  </div>
   <style>
     .section.slidecolor {
       background-color: white;

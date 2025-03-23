@@ -18,7 +18,9 @@ mdc: true
 
 Item 21 ~ Item 25
 
-<ChiikawaX3 />
+<div class="flex items-center justify-center mt-8">
+  <img src="/images/ChiikawaX3.png" width="200px" />
+</div>
 <style>
   .slidev-layout.cover h1, .slidev-layout.cover h2, .slidev-layout.cover h3 {
     border-bottom: 1px solid #ec4899;
@@ -46,7 +48,9 @@ align: l
 
 - This slide is made by <a href="https://sli.dev/" target="_blank">slidev</a>
 
-<Sit />
+<div class="flex items-center justify-center mt-16">
+  <img src="/images/Sit.webp" width="300px" />
+</div>
 
 ---
 src: ./pages/item21.md
@@ -84,7 +88,9 @@ color: sky-light
 
 <div class="text-center">
   <h1> Q & A</h1>
-  <Thanks />
+  <div class="flex items-center justify-center mt-8">
+    <img src="/images/Thanks.png" width="180px" />
+  </div>
 </div>
 
 ---
@@ -95,5 +101,7 @@ color: yellow-light
 
 <div class="text-center">
   <h1>Thank you for listening</h1>
-  <Pekori />
+  <div class="flex items-center justify-center mt-8">
+    <img src="/images/Pekori.png" width="180px" />
+  </div>
 </div>

@@ -116,6 +116,11 @@ will be depended on by somebody."
       font-weight: bold;
     }
   </style>
+  <style>
+    .slidev-layout.quote {
+      padding-left: unset;
+    }
+  </style>
 </div>
 
 

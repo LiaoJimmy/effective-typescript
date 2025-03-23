@@ -25,7 +25,7 @@ point.y = 4;
 
 <v-click>
 <br>
-Object spread syntax to build up objects field by field in a type-safe way.
+Build up objects field by field in a type-safe way.
 ```ts {monaco}
 interface Point { x: number, y: number }
 const point: Point = {
