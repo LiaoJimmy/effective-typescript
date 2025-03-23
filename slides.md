@@ -20,12 +20,12 @@ Item 21 ~ Item 25
 
 <div class="flex items-center justify-center mt-8">
   <img src="/images/ChiikawaX3.png" width="200px" />
+  <style>
+    .slidev-layout.cover h1, .slidev-layout.cover h2, .slidev-layout.cover h3 {
+      border-bottom: 1px solid #ec4899;
+    }
+  </style>
 </div>
-<style>
-  .slidev-layout.cover h1, .slidev-layout.cover h2, .slidev-layout.cover h3 {
-    border-bottom: 1px solid #ec4899;
-  }
-</style>
 
 ---
 transition: fade-out
