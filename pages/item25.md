@@ -32,7 +32,6 @@ await fetchPages();
 ```
 
 <v-click>
-<br>
 <b> Question: what's the type of fetchPages()</b>
 ```ts {monaco}
 function fetchPages() {
