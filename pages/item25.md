@@ -40,7 +40,7 @@ function fetchPages() {
     return fetch('url2');
   }).catch(error => {
   
-  })
+  });
 }
 fetchPages();
 ```
