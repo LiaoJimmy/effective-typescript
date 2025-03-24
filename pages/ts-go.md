@@ -44,6 +44,14 @@ align: rm-lm
 
 :: content ::
 
+<style>
+strong {
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(108deg, #0894FF, #C959DD 34%, #FF2E54 68%, #FF9004);
+  -webkit-background-clip: text;
+}
+</style>
+
 - Faster compile time
 - Reduce memory usage
 - Improve TypeScript Language Server Protocol (LSP)
