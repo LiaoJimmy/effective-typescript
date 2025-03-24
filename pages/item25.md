@@ -41,7 +41,7 @@ function fetchPages() {
   
   });
 }
-fetchPages();
+await fetchPages();
 ```
 </v-click>
 
