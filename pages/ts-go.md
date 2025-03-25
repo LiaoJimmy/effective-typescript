@@ -109,6 +109,24 @@ go f(x, y, z)
 
 ---
 transition: fade-out
+layout: top-title
+color: pink-light
+align: l
+---
+
+:: title ::
+
+# Go & TypeScript
+
+:: content ::
+
+<div class="flex items-center justify-center">
+  <img src="/images/TSGo.png" />
+</div>
+
+
+---
+transition: fade-out
 layout: side-title
 side: l
 color: pink-light
