@@ -76,7 +76,7 @@ align: rm-lm
 
 :: content ::
 
-# Why object is null?
+# Why null is an object?
 
 <v-click>
 The type tags were stored in the lower bits of the units. There were five of them:
