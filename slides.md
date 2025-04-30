@@ -16,8 +16,6 @@ mdc: true
 
 # Effective TypeScript
 
-Item 21 ~ Item 25
-
 <div class="flex items-center justify-center mt-8">
   <img src="/images/ChiikawaX3.png" width="200px" />
   <style>
@@ -40,15 +38,15 @@ align: l
 
 :: content ::
 
-- Item 21 ~ 25
+## Today slides
 
-- Running TypeScript code with Node.js 22
+- <Link to="35">Item 36 ~ 40</Link>
 
-- A 10x Faster TypeScript
+## Archived
 
-- This slide is made by <a href="https://sli.dev/" target="_blank">slidev</a>
+- <Link to="3">Item 21 ~ 25</Link>, <Link to="20">Running TypeScript code with Node.js 22</Link>, <Link to="25">A 10x Faster TypeScript</Link>
 
-<div class="flex items-center justify-center mt-16">
+<div class="flex items-center justify-center">
   <img src="/images/Sit.webp" width="300px" />
 </div>
 
@@ -78,6 +76,22 @@ src: ./pages/ts-node-22.md
 
 ---
 src: ./pages/ts-go.md
+---
+
+---
+src: ./pages/item36.md
+---
+
+---
+src: ./pages/item37.md
+---
+
+---
+src: ./pages/item38.md
+---
+
+---
+src: ./pages/item39.md
 ---
 
 ---
