@@ -209,7 +209,7 @@ align: rm-lm
 
 # Don't expose any type outside the function
 
-```ts {monaco}
+```ts {1,9}
 function shallowObjectEqualBad(a: object, b: any): boolean {
   for (const [k, aVal] of Object.entries(a)) {
     if (!(k in b) || aVal !== b[k]) {  // ok
