@@ -60,7 +60,7 @@ align: rm-lm
 
 # Assert function return type
 
-```ts {monaco}
+```ts {9}
 interface MountainPeak {
   name: string;
   elevationMeters: number;
@@ -103,7 +103,7 @@ align: rm-lm
 
 # Provide a single overload of the function
 
-```ts {monaco}
+```ts {8}
 interface MountainPeak {
   name: string;
   elevationMeters: number;
@@ -218,7 +218,7 @@ function shallowObjectEqualBad(a: object, b: any): boolean {
   }
   return Object.keys(a).length === Object.keys(b).length;
 }
-shallowObjectEqual({ a: 1 }, null);
+shallowObjectEqualBad({ a: 1 }, null);
 ```
 
 ---
