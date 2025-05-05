@@ -9,41 +9,37 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 25
+# Item 40
 
-<HachiwareItem2e text="Item 27 (2e)"/>
+<HachiwareItem2e text="Item 45 (2e)"/>
 
 :: content ::
 
-# Prefer async/await to raw Promises
-It enforces that async functions always return Promises.
+# Hide unsafe type assertions in well-typed functions
 
 ```ts {monaco}
-async function fetchPages() {
-  try {
-    const response1 = await fetch('url1');
-    const response2 = await fetch('url2');
-    // ...
-  } catch (error) {
-    // ...
-  }
+interface MountainPeak {
+  name: string;
+  elevationMeters: number;
 }
-await fetchPages();
-```
 
-<v-click>
-<b> Question: what's the type of fetchPages()</b>
-```ts {monaco}
-function fetchPages() {
-  fetch('url1').then(response1 => {
-    return fetch('url2');
-  }).catch(error => {
-  
-  });
+declare function fetchJSON(url: string): Promise<unknown>;
+	
+export async function fetchPeak(peakId: string) {
+  return fetchJSON(`/api/mountain-peaks/${peakId}`);
 }
-await fetchPages();
+
+const sevenPeaks = [
+  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
+];
+async function getPeaksByHeight(): Promise<MountainPeak[]> {
+  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
+  return peaks.toSorted(
+    (a, b) => b.elevationMeters - a.elevationMeters
+  );
+}
+await getPeaksByHeight();
 ```
-</v-click>
 
 ---
 transition: fade-out
@@ -56,23 +52,196 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 25
+# Item 40
 
-<HachiwareItem2e text="Item 27 (2e)"/>
+<HachiwareItem2e text="Item 45 (2e)"/>
 
 :: content ::
 
-# Top level await
+# Assert function return type
 
-<v-click>
-You can use the await keyword on its own (outside of an async function) at the top level of a module.
 ```ts {monaco}
-const findAnswer = async () => {
-  return new Promise<string>((resolve, _) => {
-    resolve('answer');
-  });
+interface MountainPeak {
+  name: string;
+  elevationMeters: number;
 }
 
-await findAnswer();
+declare function fetchJSON(url: string): Promise<unknown>;
+	
+export async function fetchPeak(peakId: string) {
+  return fetchJSON(`/api/mountain-peaks/${peakId}`) as Promise<MountainPeak>;
+}
+
+const sevenPeaks = [
+  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
+];
+async function getPeaksByHeight(): Promise<MountainPeak[]> {
+  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
+  return peaks.toSorted(
+    (a, b) => b.elevationMeters - a.elevationMeters
+  );
+}
+await getPeaksByHeight();
 ```
-</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 40
+
+<HachiwareItem2e text="Item 45 (2e)"/>
+
+:: content ::
+
+# Provide a single overload of the function
+
+```ts {monaco}
+interface MountainPeak {
+  name: string;
+  elevationMeters: number;
+}
+
+declare function fetchJSON(url: string): Promise<unknown>;
+	
+export async function fetchPeak(peakId: string): Promise<MountainPeak>;
+export async function fetchPeak(peakId: string) {
+  return fetchJSON(`/api/mountain-peaks/${peakId}`);
+}
+
+const sevenPeaks = [
+  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
+];
+async function getPeaksByHeight(): Promise<MountainPeak[]> {
+  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
+  return peaks.toSorted(
+    (a, b) => b.elevationMeters - a.elevationMeters
+  );
+}
+await getPeaksByHeight();
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 40
+
+<HachiwareItem2e text="Item 45 (2e)"/>
+
+:: content ::
+
+# Push into use type assertion
+
+```ts {monaco}
+function shallowObjectEqual(a: object, b: object): boolean {
+  for (const [k, aVal] of Object.entries(a)) {
+    if (!(k in b) || aVal !== b[k]) {
+      return false;
+    }
+  }
+  return Object.keys(a).length === Object.keys(b).length;
+}
+shallowObjectEqual({ a: 1 }, { b: 2 });
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 40
+
+<HachiwareItem2e text="Item 45 (2e)"/>
+
+:: content ::
+
+# Hide the any type inside the function
+
+```ts {3}
+function shallowObjectEqual(a: object, b: object): boolean {
+  for (const [k, aVal] of Object.entries(a)) {
+    if (!(k in b) || aVal !== (b as any)[k]) {
+      return false;
+    }
+  }
+  return Object.keys(a).length === Object.keys(b).length;
+}
+shallowObjectEqual({ a: 1 }, { b: 2 });
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 40
+
+<HachiwareItem2e text="Item 45 (2e)"/>
+
+:: content ::
+
+# Don't expose any type outside the function
+
+```ts {monaco}
+function shallowObjectEqualBad(a: object, b: any): boolean {
+  for (const [k, aVal] of Object.entries(a)) {
+    if (!(k in b) || aVal !== b[k]) {  // ok
+      return false;
+    }
+  }
+  return Object.keys(a).length === Object.keys(b).length;
+}
+shallowObjectEqual({ a: 1 }, null);
+```
+
+---
+transition: fade-out
+layout: quote
+color: sky-light
+quotesize: text-m
+authorsize: text-s
+author: 'Effective TypeScript'
+
+---
+
+"Make sure you explain why your type assertions are valid, and unit test your code thoroughly."
+
+<div class="flex justify-center mt-8">
+  <img src="/images/ChikawaDraw.png" width="300px" />
+  <style>
+    .quote_author {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .slidev-layout.quote {
+      padding-left: 3.5rem;
+    }
+  </style>
+</div>
