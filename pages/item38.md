@@ -52,7 +52,7 @@ align: rm-lm
 
 :: content ::
 
-# Use the Narrowest Possible Scope for any Types
+# any for entire lifetime
 
 ```ts {monaco}
 type Pizza = {
@@ -70,6 +70,36 @@ function eatDinner1() {
   pizza.slice();  // This call is unchecked!
 }
 eatDinner1();
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: yellow-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 38
+
+<UsagiItem2e text="Item 43 (2e)"/>
+
+:: content ::
+
+# any type is scoped to a single expression
+
+```ts {monaco}
+type Pizza = {
+  slice: () => void;
+};
+type Salad = {
+  vegetables: string[];
+};
+declare function getPizza(): Pizza;
+declare function eatSalad(salad: Salad): void;
 
 function eatDinner2() {
   const pizza = getPizza();
@@ -96,7 +126,7 @@ align: rm-lm
 
 :: content ::
 
-# Use the Narrowest Possible Scope for any Types
+# @ts-ignore and @ts-expect-error
 
 ```ts {monaco}
 type Pizza = {
@@ -142,7 +172,7 @@ align: rm-lm
 
 :: content ::
 
-# Reduce any scope as much as you possibly can to avoid collateral damage.
+# Reduce as any scope
 
 ```ts {monaco}
 interface Config {
@@ -160,8 +190,8 @@ const config: Config = {
   a: 1,
   b: 2,
   c: {
-    key: myKey
+    key: myKey // Option 1: as any
   }
-};
+};  // Option 2: as any
 console.log(config);
 ```

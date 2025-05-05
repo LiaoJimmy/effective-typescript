@@ -80,7 +80,7 @@ align: rm-lm
 
 # Avoid using any if you expect a function type.
 
-```ts {monaco}
+```ts {1-5|7-8}
 type FnAny = any;  // any for what?
 type Fn0 = () => any;  // any function callable with no params
 type Fn1 = (arg: any) => any;  // With one param

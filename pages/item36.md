@@ -51,7 +51,7 @@ align: rm-lm
 
 # Type declaration and value with less ambiguity
 
-```ts {monaco}
+```ts {1-7|8-15|all}
 interface Animal {
   commonName: string;
   genus: string;

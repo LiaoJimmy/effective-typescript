@@ -51,7 +51,7 @@ align: rm-lm
 
 # Prevent other fields using an optional never property
 
-```ts {monaco}
+```ts {4|all}
 interface Vector2D {
   x: number;
   y: number;
@@ -86,7 +86,7 @@ align: rm-lm
 
 # Nominal typing
 
-```ts {monaco}
+```ts {1-2|4-5|all}
 type Meters = number & {_brand: 'meters'};
 type Seconds = number & {_brand: 'seconds'};
 
@@ -151,9 +151,10 @@ align: rm-lm
 
 # Unique symbol
 
-```ts {monaco}
+```ts {1-2|all}
 declare const brand: unique symbol;
 type Meters = number & {[brand]: 'meters'};
+
 const meters = (m: number) => m as Meters;
 const oneKm = meters(1000);
 console.log(oneKm);
@@ -212,7 +213,7 @@ align: rm-lm
 
 # Binary Search
 
-```ts {monaco}
+```ts {1-9|11-20|all}
 declare const isSortedList: unique symbol;
 type SortedList<T> = T[] & {[isSortedList]: 'sorted'};
 
@@ -258,9 +259,28 @@ align: rm-lm
 
 :: content ::
 
+<BinarySearch />
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 37
+
+<HachiwareItem2e text="Item 64 (2e)"/>
+
+:: content ::
+
 # Binary Search
 - lower bound
 - upper bound
-- Binary search g(x) 
+- Find min/max f(x) 
 
 <Youtube id="v57lNF2mb_s" width="550px" height="300px"/>
