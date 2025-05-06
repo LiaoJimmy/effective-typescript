@@ -15,7 +15,7 @@ align: rm-lm
 
 :: content ::
 
-# Sometimes structural typing lead to surprising results
+# Surprising structural typing
 
 ```ts {monaco-run} {autorun:false}  
 interface Vector2D {
@@ -51,7 +51,7 @@ align: rm-lm
 
 # Prevent other fields using an optional never property
 
-```ts {4|all}
+```ts {monaco}
 interface Vector2D {
   x: number;
   y: number;
@@ -63,7 +63,7 @@ function calculateNorm(p: Vector2D) {
 
 const norm2D = calculateNorm({x: 3, y: 4});
 const vec3D = {x: 3, y: 4, z: 1};
-const norm3D = calculateNorm(vec3D);  // OK! result is also 5
+const norm3D = calculateNorm(vec3D);
 console.log(norm2D, norm3D);
 ```
 
@@ -149,7 +149,7 @@ align: rm-lm
 
 :: content ::
 
-# Unique symbol
+# Nominal typing with unique symbol
 
 ```ts {1-2|all}
 declare const brand: unique symbol;
@@ -211,7 +211,7 @@ align: rm-lm
 
 :: content ::
 
-# Binary Search
+# Binary search
 
 ```ts {1-9|11-20|all}
 declare const isSortedList: unique symbol;
@@ -278,9 +278,32 @@ align: rm-lm
 
 :: content ::
 
-# Binary Search
+# More binary search
 - lower bound
 - upper bound
 - Find min/max f(x) 
 
 <Youtube id="v57lNF2mb_s" width="550px" height="300px"/>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 37
+
+<HachiwareItem2e text="Item 64 (2e)"/>
+
+:: content ::
+
+# Binary search in real world?
+
+<v-click>
+  <img src="/images/GitBisect.png" width="600px" class="mt-4"/>
+</v-click>

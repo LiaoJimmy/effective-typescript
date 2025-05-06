@@ -15,7 +15,7 @@ align: rm-lm
 
 :: content ::
 
-# There are a few naming issues here
+# Naming issues
 
 ```ts {monaco}
 interface Animal {
@@ -49,7 +49,7 @@ align: rm-lm
 
 :: content ::
 
-# Type declaration and value with less ambiguity
+# Type and value with less ambiguity
 
 ```ts {1-7|8-15|all}
 interface Animal {
@@ -101,6 +101,29 @@ author: '​Phil Karlton'
     }
   </style>
 </div>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 36
+
+<ChiikawaItem2e text="Item 41 (2e)" />
+
+:: content ::
+
+# Data-fetching library and cache
+
+- TanStack Query (React Query)
+- Vercel SWR
+- Redux Toolkit Query 
 
 ---
 transition: fade-out

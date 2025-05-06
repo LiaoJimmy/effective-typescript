@@ -1,6 +1,6 @@
 <template>
   <div class="binary-search-container">
-    <h2>Binary Search Visualization</h2>
+    <h2>Binary search visualization</h2>
     
     <div class="input-section">
       <div class="form-group">
@@ -20,7 +20,7 @@
           id="target-input" 
           v-model="targetInput" 
           @change="validateTarget"
-          placeholder="e.g. 7"
+          placeholder="e.g. 9"
         />
         <div v-if="targetError" class="error">{{ targetError }}</div>
       </div>
@@ -67,7 +67,7 @@ import { ref, computed, watch, onMounted } from 'vue';
 
 // Reactive state
 const arrayInput = ref('1,3,5,7,9,11,13');
-const targetInput = ref('11');
+const targetInput = ref('9');
 const array = ref([]);
 const target = ref(null);
 const low = ref(0);

@@ -15,7 +15,7 @@ align: rm-lm
 
 :: content ::
 
-# Use the Narrowest Possible Scope for any Types
+# Use the narrowest possible scope for any Types
 
 ```ts {monaco}
 type Pizza = {
