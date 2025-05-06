@@ -48,12 +48,11 @@
         </div>
       </div>
       
-      <div class="info-section">
+      <div class="info-section" v-if="isSearching || hasSearched">
         <div v-if="isSearching || hasSearched">
           <p>Searching for: {{ target }}</p>
           <p v-if="isSearching">Current range: [{{ low }}, {{ high }}]</p>
-          <p v-if="isSearching">Middle index: {{ mid }}</p>
-          <p v-if="isSearching">Middle value: {{ array[mid] }}</p>
+          <p v-if="isSearching">Middle index: {{ mid }}, Middle value: {{ array[mid] }}</p>
           <p v-if="hasSearched && found">Found {{ target }} at index {{ resultIndex }}!</p>
           <p v-if="hasSearched && !found">{{ target }} not found in the array.</p>
         </div>
@@ -368,6 +367,10 @@ button:disabled {
   border: 1px solid #eee;
   border-radius: 4px;
   background-color: #f9f9f9;
+}
+
+.info-section p {
+  margin: 5px 0;
 }
 
 .steps-container {
