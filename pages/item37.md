@@ -305,5 +305,8 @@ align: rm-lm
 # Binary search in real world?
 
 <v-click>
-  <img src="/images/GitBisect.png" width="600px" class="mt-4"/>
+  <div class="mt-4">
+    <h2>Git bisect</h2> 
+    <img src="/images/GitBisect.webp" width="600px"/>
+  </div>
 </v-click>
