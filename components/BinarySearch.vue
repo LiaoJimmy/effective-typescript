@@ -295,7 +295,7 @@ input {
 button {
   padding: 8px 16px;
   margin-right: 10px;
-  background-color: #4CAF50;
+  background-color: rgb(34 197 94 / var(--un-bg-opacity)) ;
   color: white;
   border: none;
   border-radius: 4px;
@@ -308,7 +308,7 @@ button:disabled {
 }
 
 .error {
-  color: red;
+  color: rgb(239 68 68 / var(--un-bg-opacity));
   font-size: 0.8em;
   margin-top: 5px;
 }
@@ -337,21 +337,21 @@ button:disabled {
 }
 
 .low {
-  border: 2px solid blue;
+  border: 2px solid rgb(59 130 246 / var(--un-bg-opacity));
 }
 
 .high {
-  border: 2px solid green;
+  border: 2px solid rgb(34 197 94 / var(--un-bg-opacity));
 }
 
 .mid {
-  background-color: #ffeb3b;
-  border: 2px solid red;
+  background-color: rgb(254 249 195 / var(--un-bg-opacity));
+  border: 2px solid rgb(239 68 68 / var(--un-bg-opacity));
   font-weight: bold;
 }
 
 .current {
-  background-color: #4CAF50;
+  background-color: rgb(34 197 94 / var(--un-bg-opacity));
   color: white;
   font-weight: bold;
   transform: scale(1.1);
