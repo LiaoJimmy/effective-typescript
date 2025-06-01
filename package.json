@@ -13,11 +13,13 @@
     "@slidev/theme-seriph": "latest",
     "install": "^0.13.0",
     "npm": "^11.2.0",
+    "react": "^19.1.0",
     "slidev-theme-neversink": "^0.3.6",
     "vue": "^3.5.13",
     "zwitch": "^2.0.4"
   },
   "devDependencies": {
-    "@storybook/react": "^8.6.5"
+    "@storybook/react": "^8.6.5",
+    "@types/react": "^19.1.6"
   }
 }

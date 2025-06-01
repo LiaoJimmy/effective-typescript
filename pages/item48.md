@@ -9,37 +9,33 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 40
+# Item 48
 
-<HachiwareItem2e text="Item 45 (2e)"/>
+<HachiwareItem2e text="Item 68 (2e)"/>
 
 :: content ::
 
-# Hide unsafe type assertions in well-typed functions
+# Use TSDoc for API Comments
 
 ```ts {monaco}
-interface MountainPeak {
-  name: string;
-  elevationMeters: number;
+/** Generate a greeting. Result is formatted for display. */
+function greetJSDoc(name: string, title: string) {
+  return `Hello ${title} ${name}`;
 }
-
-declare function fetchJSON(url: string): Promise<unknown>;
-	
-export async function fetchPeak(peakId: string) {
-  return fetchJSON(`/api/mountain-peaks/${peakId}`);
-}
-
-const sevenPeaks = [
-  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
-];
-async function getPeaksByHeight(): Promise<MountainPeak[]> {
-  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
-  return peaks.toSorted(
-    (a, b) => b.elevationMeters - a.elevationMeters
-  );
-}
-await getPeaksByHeight();
+greetJSDoc('Haichiware', 'っ(^⦁᎑⦁^)੭');
 ```
+<br/>
+
+<v-click>
+<h2> // comment is not TSDoc format</h2>
+```ts {monaco}
+// Generate a greeting. Result is formatted for display.
+function greet(name: string, title: string) {
+  return `Hello ${title} ${name}`;
+}
+greet('Haichiware', 'ฅ(^•᎑•^)ฅ');
+```
+</v-click>
 
 ---
 transition: fade-out
@@ -52,111 +48,37 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 40
+# Item 48
 
-<HachiwareItem2e text="Item 45 (2e)"/>
-
-:: content ::
-
-# Assert function return type
-
-```ts {9}
-interface MountainPeak {
-  name: string;
-  elevationMeters: number;
-}
-
-declare function fetchJSON(url: string): Promise<unknown>;
-	
-export async function fetchPeak(peakId: string) {
-  return fetchJSON(`/api/mountain-peaks/${peakId}`) as Promise<MountainPeak>;
-}
-
-const sevenPeaks = [
-  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
-];
-async function getPeaksByHeight(): Promise<MountainPeak[]> {
-  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
-  return peaks.toSorted(
-    (a, b) => b.elevationMeters - a.elevationMeters
-  );
-}
-await getPeaksByHeight();
-```
-
----
-transition: fade-out
-layout: side-title
-side: l
-color: sky-light
-titlewidth: is-4
-align: rm-lm
-
----
-:: title ::
-
-# Item 40
-
-<HachiwareItem2e text="Item 45 (2e)"/>
+<HachiwareItem2e text="Item 68 (2e)"/>
 
 :: content ::
 
-# Provide a single overload of the function
-
-```ts {8}
-interface MountainPeak {
-  name: string;
-  elevationMeters: number;
-}
-
-declare function fetchJSON(url: string): Promise<unknown>;
-	
-export async function fetchPeak(peakId: string): Promise<MountainPeak>;
-export async function fetchPeak(peakId: string) {
-  return fetchJSON(`/api/mountain-peaks/${peakId}`);
-}
-
-const sevenPeaks = [
-  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
-];
-async function getPeaksByHeight(): Promise<MountainPeak[]> {
-  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
-  return peaks.toSorted(
-    (a, b) => b.elevationMeters - a.elevationMeters
-  );
-}
-await getPeaksByHeight();
-```
-
----
-transition: fade-out
-layout: side-title
-side: l
-color: sky-light
-titlewidth: is-4
-align: rm-lm
-
----
-:: title ::
-
-# Item 40
-
-<HachiwareItem2e text="Item 45 (2e)"/>
-
-:: content ::
-
-# Push into use type assertion
+# TSDoc with type definitions
 
 ```ts {monaco}
-function shallowObjectEqual(a: object, b: object): boolean {
-  for (const [k, aVal] of Object.entries(a)) {
-    if (!(k in b) || aVal !== b[k]) {
-      return false;
-    }
-  }
-  return Object.keys(a).length === Object.keys(b).length;
+/** A measurement performed at a time and place. */
+interface Measurement {
+  /** Where was the measurement made? */
+  position: Vector3D;
+  /** When was the measurement made? In seconds since epoch. */
+  time: number;
+  /** Observed momentum */
+  momentum: Vector3D;
 }
-shallowObjectEqual({ a: 1 }, { b: 2 });
+
+interface Vector3D {
+  x: number;
+  y: number;
+  z: number;
+}
+
+const measurement: Measurement = {
+  position: { x: 1, y: 2, z: 3 },
+  time: 1234567890,
+  momentum: { x: 0.1, y: 0.2, z: 0.3 },
+};
+console.log(measurement);
 ```
 
 ---
@@ -170,24 +92,24 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 40
+# Item 48
 
-<HachiwareItem2e text="Item 45 (2e)"/>
+<HachiwareItem2e text="Item 68 (2e)"/>
 
 :: content ::
 
-# Hide the any type inside the function
+# @template tag to document type parameters for generic types.
 
-```ts {3}
-function shallowObjectEqual(a: object, b: object): boolean {
-  for (const [k, aVal] of Object.entries(a)) {
-    if (!(k in b) || aVal !== (b as any)[k]) {
-      return false;
-    }
-  }
-  return Object.keys(a).length === Object.keys(b).length;
-}
-shallowObjectEqual({ a: 1 }, { b: 2 });
+```ts {monaco}
+/**
+ * Construct a new object type using a subset of the properties of another one
+ * (same as the built-in `Pick` type).
+ * @template T The original object type
+ * @template K The keys to pick, typically a union of string literal types.
+ */
+type MyPick<T extends object, K extends keyof T> = {
+  [P in K]: T[P]
+};
 ```
 
 ---
@@ -201,47 +123,89 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 40
+# Item 48
 
-<HachiwareItem2e text="Item 45 (2e)"/>
+<HachiwareItem2e text="Item 68 (2e)"/>
 
 :: content ::
 
-# Don't expose any type outside the function
+# TSDoc comments are formatted using Markdown
 
-```ts {1,9}
-function shallowObjectEqualBad(a: object, b: any): boolean {
-  for (const [k, aVal] of Object.entries(a)) {
-    if (!(k in b) || aVal !== b[k]) {  // ok
-      return false;
-    }
-  }
-  return Object.keys(a).length === Object.keys(b).length;
+you can use **bold**, *italic*, or 
+- bulleted lists
+
+```ts {monaco}
+/** A measurement performed at a time and place. */
+interface Measurement {
+  /** *Where* was the measurement made? */
+  position: Vector3D;
+  /** When was the measurement made? In **seconds** since epoch. */
+  time: number;
+  /** Observed momentum */
+  momentum: Vector3D;
 }
-shallowObjectEqualBad({ a: 1 }, null);
+interface Vector3D { x: number; y: number; z: number; }
+
+const measurement: Measurement = {
+  position: { x: 1, y: 2, z: 3 },
+  time: 1234567890,
+  momentum: { x: 0.1, y: 0.2, z: 0.3 },
+};
+console.log(measurement);
 ```
 
 ---
 transition: fade-out
-layout: quote
+layout: side-title
+side: l
 color: sky-light
-quotesize: text-m
-authorsize: text-s
-author: 'Effective TypeScript'
+titlewidth: is-4
+align: rm-lm
 
 ---
+:: title ::
 
-"Make sure you explain why your type assertions are valid, and unit test your code thoroughly."
+# Item 48
 
-<div class="flex justify-center mt-8">
-  <img src="/images/ChikawaDraw.png" width="300px" />
-  <style>
-    .quote_author {
-      font-size: 32px;
-      font-weight: bold;
-    }
-    .slidev-layout.quote {
-      padding-left: 3.5rem;
-    }
-  </style>
-</div>
+<HachiwareItem2e text="Item 68 (2e)"/>
+
+:: content ::
+
+# Comment best practices
+
+
+- Try to avoid writing essays in your documentation, though.
+- The best comments are short and to the point.
+- JSDoc includes some conventions for specifying type information (@param {string} name ...)
+  - but you should avoid add type in TypeScript comment.
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 48
+
+<HachiwareItem2e text="Item 68 (2e)"/>
+
+:: content ::
+
+# @deprecated tag
+
+You should mark deprecated symbols using the @deprecated tag.
+
+```ts {monaco}
+/** @deprecated use getSecretGift instead */
+export function getGift(): void {
+
+}
+getGift();
+```
+
+More TSDoc tags are available in the [TSDoc documentation](https://tsdoc.org/).
