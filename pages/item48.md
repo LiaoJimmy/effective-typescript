@@ -191,6 +191,28 @@ align: rm-lm
 
 :: content ::
 
+# Clean Code - Comment
+
+<br />
+<img src="/images/CleanCodeComment.png" />
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 48
+
+<HachiwareItem2e text="Item 68 (2e)"/>
+
+:: content ::
+
 # @deprecated tag
 
 You should mark deprecated symbols using the @deprecated tag.
