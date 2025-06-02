@@ -50,7 +50,6 @@ align: rm-lm
 declare function map<U, V>(array: U[], fn: (u: U) => V): V[];
 
 const lengths: number[] = map(['john', 'paul'], name => name.length);
-console.log(lengths);
 ```
 <br />
 
@@ -171,7 +170,7 @@ function assertType<T>(x: T) { }
 
 const double = (x: number) => 2 * x;
 declare let p: Parameters<typeof double>;
-assertType<[number, number]>(p);
+assertType<[number]>(p);
 
 declare let r: ReturnType<typeof double>;
 assertType<number>(r);  // OK
