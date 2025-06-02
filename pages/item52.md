@@ -50,6 +50,7 @@ align: rm-lm
 declare function map<U, V>(array: U[], fn: (u: U) => V): V[];
 
 const lengths: number[] = map(['john', 'paul'], name => name.length);
+console.log(lengths);
 ```
 <br />
 
@@ -77,6 +78,7 @@ align: rm-lm
 # Define a helper to assert
 
 ```ts {monaco}
+declare function map<U, V>(array: U[], fn: (u: U) => V): V[];
 function assertType<T>(x: T) { }
 
 assertType<number[]>(map(['john', 'paul'], name => name.length));
@@ -138,7 +140,6 @@ align: rm-lm
 Function
 
 ```ts {monaco}
-declare function map<U, V>(array: U[], fn: (u: U) => V): V[];
 function assertType<T>(x: T) { }
 
 const double = (x: number) => 2 * x;
@@ -199,9 +200,12 @@ You can use it on its own or via the vitest testing framework, which bundles it.
 
 <a href="https://vitest.dev/api/expect-typeof.html" target="_blank">Vitest expect-typeof</a>
 
-```ts {monaco}
+```ts {all|8-17}
 import { expectTypeOf } from 'expect-type';
-declare function map<U, V>(array: U[], fn: (u: U) => V): V[];
+declare function map<U, V>
+  (array: U[],
+  fn: (this: U[], u: U, i: number, array: U[]) => V)
+: V[];
 
 const beatles = ['john', 'paul', 'george', 'ringo'];
 expectTypeOf(map(

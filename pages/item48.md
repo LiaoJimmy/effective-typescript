@@ -177,7 +177,7 @@ align: rm-lm
 - Try to avoid writing essays in your documentation, though.
 - The best comments are short and to the point.
 - JSDoc includes some conventions for specifying type information (@param {string} name ...)
-  - but you should avoid add type in TypeScript comment.
+  - But you should avoid add type in TypeScript comment.
 
 ---
 transition: fade-out

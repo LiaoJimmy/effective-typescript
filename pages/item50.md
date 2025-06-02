@@ -11,11 +11,13 @@ align: rm-lm
 
 # Item 50
 
-<ChiikawaItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 52 (2e)"/>
 
 :: content ::
 
-# How would you write a type declaration for this JavaScript function?
+# Prefer Conditional Types to Overload Signatures
+
+How would you write a type declaration for this JavaScript function?
 
 ```js {monaco}
 function double(x) {
@@ -54,7 +56,7 @@ align: rm-lm
 
 # Item 50
 
-<ChiikawaItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 52 (2e)"/>
 
 :: content ::
 
@@ -62,7 +64,8 @@ align: rm-lm
 
 
 ```ts {monaco}
-function double<T extends string | number>(x: T): T extends string ? string : number;
+function double<T extends string | number>(x: T)
+  : T extends string ? string : number;
 function double(x: string | number): string | number {
   return typeof x === 'string' ? x + x : x + x;
 }
@@ -86,7 +89,7 @@ align: rm-lm
 
 # Item 50
 
-<ChiikawaItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 52 (2e)"/>
 
 :: content ::
 
@@ -112,7 +115,7 @@ align: rm-lm
 
 # Item 50
 
-<ChiikawaItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 52 (2e)"/>
 
 :: content ::
 

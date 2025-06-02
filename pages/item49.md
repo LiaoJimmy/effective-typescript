@@ -85,14 +85,12 @@ align: rm-lm
 
 # this in React class component
 
-```ts {monaco}
+```tsx {all|6,18}
 import React from 'react';
 class Car extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      color: "red",
-    };
+    this.state = { color: "red", };
     this.changeColor = this.changeColor.bind(this);
   }
 

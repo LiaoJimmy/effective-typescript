@@ -18,7 +18,7 @@ align: rm-lm
 # Mirror Types to Sever Dependencies
 
 
-```ts {monaco}
+```ts
 // parse-csv.ts
 import { Buffer } from 'node:buffer';
 
@@ -52,7 +52,7 @@ align: rm-lm
 # `--declaration`
 <br />
 
-```ts {monaco}
+```ts
 // parse-csv.d.ts
 import { Buffer } from 'node:buffer';
 export declare function parseCSV(contents: string | Buffer): {

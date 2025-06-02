@@ -80,6 +80,7 @@ align: rm-lm
 # Version matching can go wrong
 
 - Update a library but forget to update its type declarations.
+  - Auto update library by Dependabot
 - Your type declarations might get ahead of your library.
 - The type declarations might require a newer version of TypeScript
 
