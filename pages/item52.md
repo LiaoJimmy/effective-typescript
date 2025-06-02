@@ -249,7 +249,9 @@ export type Expect<T extends true> = T;
 
 const double = (x: number) => 2 * x;
 type Test1 = Expect<Equals<typeof double, (x: number) => number>>;
-type Test2 = Expect<Equals<typeof double, (x: string) => number>>;
+type Test2 = Expect<
+  Equals<typeof double, (x: number, y: number) => number>
+>;
 ```
 
 ---

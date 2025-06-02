@@ -62,7 +62,6 @@ export declare function parseCSV(contents: string | Buffer): {
 <br />
 
 <v-click>
-<h2>TypeScript developer:</h2>
 Cannot find module 'node:buffer' or its corresponding type declarations.
 </v-click>
 
