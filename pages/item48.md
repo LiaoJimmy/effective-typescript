@@ -66,12 +66,7 @@ interface Measurement {
   /** Observed momentum */
   momentum: Vector3D;
 }
-
-interface Vector3D {
-  x: number;
-  y: number;
-  z: number;
-}
+interface Vector3D { x: number; y: number; z: number; }
 
 const measurement: Measurement = {
   position: { x: 1, y: 2, z: 3 },
@@ -79,37 +74,6 @@ const measurement: Measurement = {
   momentum: { x: 0.1, y: 0.2, z: 0.3 },
 };
 console.log(measurement);
-```
-
----
-transition: fade-out
-layout: side-title
-side: l
-color: sky-light
-titlewidth: is-4
-align: rm-lm
-
----
-:: title ::
-
-# Item 48
-
-<HachiwareItem2e text="Item 68 (2e)"/>
-
-:: content ::
-
-# @template tag to document type parameters for generic types.
-
-```ts {monaco}
-/**
- * Construct a new object type using a subset of the properties of another one
- * (same as the built-in `Pick` type).
- * @template T The original object type
- * @template K The keys to pick, typically a union of string literal types.
- */
-type MyPick<T extends object, K extends keyof T> = {
-  [P in K]: T[P]
-};
 ```
 
 ---
@@ -152,6 +116,37 @@ const measurement: Measurement = {
   momentum: { x: 0.1, y: 0.2, z: 0.3 },
 };
 console.log(measurement);
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 48
+
+<HachiwareItem2e text="Item 68 (2e)"/>
+
+:: content ::
+
+# @template tag to document type parameters for generic types.
+
+```ts {monaco}
+/**
+ * Construct a new object type using a subset of the properties of another one
+ * (same as the built-in `Pick` type).
+ * @template T The original object type
+ * @template K The keys to pick, typically a union of string literal types.
+ */
+type MyPick<T extends object, K extends keyof T> = {
+  [P in K]: T[P]
+};
 ```
 
 ---
