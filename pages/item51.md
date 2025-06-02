@@ -221,7 +221,7 @@ https://go-proverbs.github.io/
 
 <br />
 
-<v-clicks>
+<v-click>
 
 <h1>Zen of Python</h1>
 
@@ -230,9 +230,9 @@ python3
 import this
 ``` 
 
+<br />
 <a href="https://upload.wikimedia.org/wikipedia/commons/d/dc/The_Zen_of_Python_illustrated.png" target="_blank">
 The Zen of Python Illustrated
 </a>
 
-</v-clicks>
-
+</v-click>

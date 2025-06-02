@@ -2,246 +2,132 @@
 transition: fade-out
 layout: side-title
 side: l
-color: sky-light
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 
 ---
 :: title ::
 
-# Item 40
+# Item 50
 
-<HachiwareItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 45 (2e)"/>
 
 :: content ::
 
-# Hide unsafe type assertions in well-typed functions
+# How would you write a type declaration for this JavaScript function?
+
+```js {monaco}
+function double(x) {
+  return x + x;
+}
+console.log(double(12));
+```
+
+<v-click>
+<br />
+
+## Make the function generic
 
 ```ts {monaco}
-interface MountainPeak {
-  name: string;
-  elevationMeters: number;
+function double<T extends string | number>(x: T): T {
+  return x + x; // Question: why does this not work?
 }
 
-declare function fetchJSON(url: string): Promise<unknown>;
-	
-export async function fetchPeak(peakId: string) {
-  return fetchJSON(`/api/mountain-peaks/${peakId}`);
-}
-
-const sevenPeaks = [
-  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
-];
-async function getPeaksByHeight(): Promise<MountainPeak[]> {
-  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
-  return peaks.toSorted(
-    (a, b) => b.elevationMeters - a.elevationMeters
-  );
-}
-await getPeaksByHeight();
+const num = double(12);
+const str = double('x');
+console.log(num, str);
 ```
+
+</v-click>
 
 ---
 transition: fade-out
 layout: side-title
 side: l
-color: sky-light
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 
 ---
 :: title ::
 
-# Item 40
+# Item 50
 
-<HachiwareItem2e text="Item 45 (2e)"/>
-
-:: content ::
-
-# Assert function return type
-
-```ts {9}
-interface MountainPeak {
-  name: string;
-  elevationMeters: number;
-}
-
-declare function fetchJSON(url: string): Promise<unknown>;
-	
-export async function fetchPeak(peakId: string) {
-  return fetchJSON(`/api/mountain-peaks/${peakId}`) as Promise<MountainPeak>;
-}
-
-const sevenPeaks = [
-  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
-];
-async function getPeaksByHeight(): Promise<MountainPeak[]> {
-  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
-  return peaks.toSorted(
-    (a, b) => b.elevationMeters - a.elevationMeters
-  );
-}
-await getPeaksByHeight();
-```
-
----
-transition: fade-out
-layout: side-title
-side: l
-color: sky-light
-titlewidth: is-4
-align: rm-lm
-
----
-:: title ::
-
-# Item 40
-
-<HachiwareItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 45 (2e)"/>
 
 :: content ::
 
-# Provide a single overload of the function
+# Function signatures
 
-```ts {8}
-interface MountainPeak {
-  name: string;
-  elevationMeters: number;
-}
-
-declare function fetchJSON(url: string): Promise<unknown>;
-	
-export async function fetchPeak(peakId: string): Promise<MountainPeak>;
-export async function fetchPeak(peakId: string) {
-  return fetchJSON(`/api/mountain-peaks/${peakId}`);
-}
-
-const sevenPeaks = [
-  'aconcagua', 'denali', 'elbrus', 'everest', 'kilimanjaro', 'vinson', 'wilhelm'
-];
-async function getPeaksByHeight(): Promise<MountainPeak[]> {
-  const peaks = await Promise.all(sevenPeaks.map(fetchPeak));
-  return peaks.toSorted(
-    (a, b) => b.elevationMeters - a.elevationMeters
-  );
-}
-await getPeaksByHeight();
-```
-
----
-transition: fade-out
-layout: side-title
-side: l
-color: sky-light
-titlewidth: is-4
-align: rm-lm
-
----
-:: title ::
-
-# Item 40
-
-<HachiwareItem2e text="Item 45 (2e)"/>
-
-:: content ::
-
-# Push into use type assertion
 
 ```ts {monaco}
-function shallowObjectEqual(a: object, b: object): boolean {
-  for (const [k, aVal] of Object.entries(a)) {
-    if (!(k in b) || aVal !== b[k]) {
-      return false;
-    }
-  }
-  return Object.keys(a).length === Object.keys(b).length;
+function double<T extends string | number>(x: T): T extends string ? string : number;
+function double(x: string | number): string | number {
+  return typeof x === 'string' ? x + x : x + x;
 }
-shallowObjectEqual({ a: 1 }, { b: 2 });
+
+const num = double(12);
+const str = double('x');
+const numOrStr = double(Math.random() > 0.5 ? num : str);
+console.log(num, str, numOrStr);
 ```
 
 ---
 transition: fade-out
 layout: side-title
 side: l
-color: sky-light
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 
 ---
 :: title ::
 
-# Item 40
+# Item 50
 
-<HachiwareItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 45 (2e)"/>
 
 :: content ::
 
-# Hide the any type inside the function
+# Conditional types distribute over unions
 
-```ts {3}
-function shallowObjectEqual(a: object, b: object): boolean {
-  for (const [k, aVal] of Object.entries(a)) {
-    if (!(k in b) || aVal !== (b as any)[k]) {
-      return false;
-    }
-  }
-  return Object.keys(a).length === Object.keys(b).length;
-}
-shallowObjectEqual({ a: 1 }, { b: 2 });
+```
+(string|number) extends string ? string : number
+→ (string extends string ? string : number) |
+  (number extends string ? string : number)
+→ string | number
 ```
 
 ---
 transition: fade-out
 layout: side-title
 side: l
-color: sky-light
+color: pink-light
 titlewidth: is-4
 align: rm-lm
 
 ---
 :: title ::
 
-# Item 40
+# Item 50
 
-<HachiwareItem2e text="Item 45 (2e)"/>
+<ChiikawaItem2e text="Item 45 (2e)"/>
 
 :: content ::
 
-# Don't expose any type outside the function
+# Distinct overloads separate is more readable
 
-```ts {1,9}
-function shallowObjectEqualBad(a: object, b: any): boolean {
-  for (const [k, aVal] of Object.entries(a)) {
-    if (!(k in b) || aVal !== b[k]) {  // ok
-      return false;
-    }
-  }
-  return Object.keys(a).length === Object.keys(b).length;
+```ts {monaco}
+function double(x: number): number;
+function double(x: string): string;
+function double(x: string | number): string | number;
+function double(x: string | number): string | number {
+  return typeof x === 'string' ? x + x : x + x;
 }
-shallowObjectEqualBad({ a: 1 }, null);
+
+const num = double(12);
+const str = double('x');
+const numOrStr = double(Math.random() > 0.5 ? num : str);
+console.log(num, str, numOrStr);
 ```
-
----
-transition: fade-out
-layout: quote
-color: sky-light
-quotesize: text-m
-authorsize: text-s
-author: 'Effective TypeScript'
-
----
-
-"Make sure you explain why your type assertions are valid, and unit test your code thoroughly."
-
-<div class="flex justify-center mt-8">
-  <img src="/images/ChikawaDraw.png" width="300px" />
-  <style>
-    .quote_author {
-      font-size: 32px;
-      font-weight: bold;
-    }
-    .slidev-layout.quote {
-      padding-left: 3.5rem;
-    }
-  </style>
-</div>
