@@ -20,18 +20,18 @@ align: rm-lm
 this in class and method
 
 ```ts {monaco-run} {autorun:false}  
-class C {
-  vals = [1, 2, 3];
+class MyMath {
+  values = [1, 2, 3];
   logSquares() {
-    for (const val of this.vals) {
-      console.log(val ** 2);
+    for (const value of this.values) {
+      console.log(value ** 2);
     }
   }
 }
 
-const c = new C();
-const method = c.logSquares;
-method();
+const math = new MyMath();
+const logSquares = math.logSquares;
+logSquares();
 ```
 
 <v-click>
