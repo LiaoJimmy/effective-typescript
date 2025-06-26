@@ -40,11 +40,11 @@ align: l
 
 ## Today slides
 
-- <Link to="65">Item 46 ~ 52</Link>
+- <Link to="107">Topological sorting</Link>
 
 ## Archived
 
-- <Link to="35">Item 36 ~ 40</Link>, <Link to="3">Item 21 ~ 25</Link>, <Link to="20">Running TypeScript code with Node.js 22</Link>, <Link to="25">A 10x Faster TypeScript</Link>
+- <Link to="65">Item 46 ~ 52</Link>, <Link to="35">Item 36 ~ 40</Link>, <Link to="3">Item 21 ~ 25</Link>, <Link to="20">Running TypeScript code with Node.js 22</Link>, <Link to="25">A 10x Faster TypeScript</Link>
 
 <div class="flex items-center justify-center">
   <img src="/images/Sit.webp" width="300px" />
@@ -124,6 +124,10 @@ src: ./pages/item51.md
 
 ---
 src: ./pages/item52.md
+---
+
+---
+src: ./pages/topological-sorting.md
 ---
 
 ---

@@ -1,0 +1,447 @@
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+# Item 61: Convert Module by Module Up Your Dependency Graph
+
+Begin migrating your own modules from the bottom of the dependency graph upwards.
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+# Item 61: Convert Module by Module Up Your Dependency Graph
+
+If you’d like to take any guesswork out of the ordering, you can run a topological sort on your dependency graph.
+
+<img src="/images/DependencyGraph.png" width="400px" />
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Topological Sorting </h1>
+
+- What’s Topological Sorting?
+- Graph
+- Graph Traversal
+- Topological Sorting Algorithm
+- Topological Sorting Problems
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> What’s Topological Sorting </h1>
+
+A topological sort is a graph traversal in which each vertex is visited only after all its dependencies are visited.
+
+<v-click>
+```mermaid {theme: 'default'}
+graph LR
+    A[layout.js] --> B[utils.js];
+    B --> C[tickers.js];
+    A --> E[math.js];
+    A --> F[helper.js];
+    G[canvas.js] --> B;
+```
+</v-click>
+
+<v-click>
+<h2> Sorting Result </h2>
+['tickers.js', 'utils.js', 'math.js', 'helper.js', 'layout.js', 'canvas.js'] 
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Graph </h1>
+
+A graph data structure is a way to represent relationships between objects.
+
+<ul>
+<v-click>
+<li> Vertices (Nodes): These represent the objects or entities in the graph. </li>
+</v-click>
+<v-click>
+<li> Edges: These represent the connections or relationships between the vertices. </li>
+</v-click>
+</ul>
+
+<v-click>
+```mermaid {theme: 'default'}
+graph LR
+    A[layout.js] --> B[utils.js];
+```
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Cycle </h1>
+
+A path that starts and ends at the same vertex.
+
+<v-click>
+```mermaid {theme: 'default'}
+graph LR
+    A[layout.js] --> B[utils.js];
+    B --> C[tickers.js];
+    C --> A[layout.js];
+```
+</v-click>
+
+<v-click>
+<h2> Question: Can we topological sort for a cycle graph? </h2>
+</v-click>
+<v-click>
+<br />
+A topological ordering is possible if and only if the graph has no directed cycles.
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Adjacent List </h1>
+
+A list where each element corresponds to a vertex, and the list contains the vertices adjacent to it.
+
+```ts {1-8|10-19}
+const edges = [
+    ['layout', 'utils'],
+    ['layout', 'math'],
+    ['layout', 'helper'],
+    ['canvas', 'utils'],
+    ['model', 'utils'],
+    ['utils', 'tickers']
+];
+
+interface AdjacentList { [key: string]: string[]; }
+const graph: AdjacentList = {
+    ['layout']: ['utils', 'math', 'helper'],
+    ['canvas']: ['utils'],
+    ['model']: ['utils'],
+    ['utils']: ['tickers'],
+    ['tickers']: [],
+    ['math']: [],
+    ['helper']: [],
+};
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Graph Traversal </h1>
+<br />
+
+<v-click>
+<h2> DFS (Depth-First Search) </h2>
+DFS starts at the root node and explores as far as possible along each branch before backtracking.
+</v-click>
+
+<p />
+<v-click>
+<h2> BFS (Breadth-First Search) </h2>
+BFS starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level.
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> DFS (Depth-First Search) </h1>
+<br />
+<v-click>
+```mermaid {theme: 'default'}
+graph LR
+    A[layout.js] --> B[utils.js];
+    B --> C[tickers.js];
+    A --> E[math.js];
+    A --> F[helper.js];
+```
+</v-click>
+
+<v-click>
+<h2> Question: What’s order of visited files? </h2>
+</v-click>
+<v-click>
+DFS Result: ['tickers.js', 'utils.js', 'math.js', 'helper.js', 'layout.js']
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+```mermaid {theme: 'default'}
+graph LR
+    A[layout.js] --> B[utils.js];
+    B --> C[tickers.js];
+    A --> E[math.js];
+    A --> F[helper.js];
+```
+
+:: content ::
+
+<h1> DFS (Depth-First Search) </h1>
+
+```ts {1-8|10-20}
+interface AdjacentList { [key: string]: string[]; }
+const graph: AdjacentList = {
+    ['layout.js']: ['utils', 'math', 'helper.js'],
+    ['utils.js']: ['tickers.js'],
+    ['tickers.js']: [],
+    ['math.js']: [],
+    ['helper.js']: [],
+};
+
+const visited = new Set();
+const dfs = (node: string) => {
+    if (visited.has(node)) return;
+
+    visited.add(node);
+    for (const child of graph[node]) {
+        dfs(child);
+    }
+    console.log(node);
+}
+dfs('layout.js');
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Topological Sorting Algorithm </h1>
+
+```{1,17-18|3-5|3,6-7|3,9|3,11-12|3,14-15|all}
+L ← Empty list that will contain the sorted nodes
+
+function visit(node n)
+    if n has a permanent mark then
+        return
+    if n has a temporary mark then
+        stop   (graph has at least one cycle)
+
+    mark n with a temporary mark
+
+    for each node m with an edge from n to m do
+        visit(m)
+
+    mark n with a permanent mark
+    add n to head of L
+
+while exists nodes without a permanent mark do
+    visit(n)
+```
+
+<v-click>
+<h2> Question: Topological sorting time and space complexity?</h2>
+</v-click>
+<v-click>
+Time Complexity: O(V + E), Space Complexity: O(V)
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> TypeScript Implementation </h1>
+
+```ts {1-5|22-23|7-8,20|7,9-12,20|7,14,20|7,16,20|7,18-19,20|all}
+declare graph: { [key: string]: string[]; };
+// {['layout']: ['utils', 'math', 'helper'], ...}
+const permanent = new Set();
+const temporary = new Set();
+const result: string[] = [];
+
+const topologicalSort = (node: string) => {
+    if (permanent.has(node)) return;
+    if (temporary.has(node)) {
+        console.log('find cycle');
+        return;
+    }
+
+    temporary.add(node);
+
+    for (const child of graph[node]) topologicalSort(child);
+
+    permanent.add(node);
+    result.push(node);
+}
+
+for (const vertex of Object.keys(graph)) topologicalSort(vertex);
+console.log(result);
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Topological Sorting Problems </h1>
