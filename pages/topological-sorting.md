@@ -17,7 +17,11 @@ align: rm-lm
 
 # Item 61: Convert Module by Module Up Your Dependency Graph
 
-Begin migrating your own modules from the bottom of the dependency graph upwards.
+<p>The very first modules to migrate are your third-party dependencies since, by definition, you import them but they don’t import you.</p>
+
+<v-click>
+<p>And migrate your own modules from the bottom of the dependency graph upwards.</p>
+</v-click>
 
 ---
 transition: fade-out
@@ -38,7 +42,7 @@ align: rm-lm
 
 # Item 61: Convert Module by Module Up Your Dependency Graph
 
-If you’d like to take any guesswork out of the ordering, you can run a topological sort on your dependency graph.
+If you’d like to take any guesswork out of the ordering, you can run a **topological sort** on your dependency graph.
 
 <img src="/images/DependencyGraph.png" width="400px" />
 
@@ -138,6 +142,8 @@ A graph data structure is a way to represent relationships between objects.
 ```mermaid {theme: 'default'}
 graph LR
     A[layout.js] --> B[utils.js];
+    A --> C[math.js];
+    B --> D[tickers.js];
 ```
 </v-click>
 
@@ -202,23 +208,23 @@ A list where each element corresponds to a vertex, and the list contains the ver
 
 ```ts {1-8|10-19}
 const edges = [
-    ['layout', 'utils'],
-    ['layout', 'math'],
-    ['layout', 'helper'],
-    ['canvas', 'utils'],
-    ['model', 'utils'],
-    ['utils', 'tickers']
+    ['layout.js', 'utils.js'],
+    ['layout.js', 'math.js'],
+    ['layout.js', 'helper.js'],
+    ['canvas.js', 'utils.js'],
+    ['model.js', 'utils.js'],
+    ['utils.js', 'tickers.js']
 ];
 
 interface AdjacentList { [key: string]: string[]; }
 const graph: AdjacentList = {
-    ['layout']: ['utils', 'math', 'helper'],
-    ['canvas']: ['utils'],
-    ['model']: ['utils'],
-    ['utils']: ['tickers'],
-    ['tickers']: [],
-    ['math']: [],
-    ['helper']: [],
+    ['layout.js']: ['utils.js', 'math.js', 'helper.js'],
+    ['canvas.js']: ['utils.js'],
+    ['model.js']: ['utils.js'],
+    ['utils.js']: ['tickers.js'],
+    ['tickers.js']: [],
+    ['math.js']: [],
+    ['helper.js']: [],
 };
 ```
 
@@ -403,7 +409,7 @@ align: rm-lm
 
 ```ts {1-5|22-23|7-8,20|7,9-12,20|7,14,20|7,16,20|7,18-19,20|all}
 declare graph: { [key: string]: string[]; };
-// {['layout']: ['utils', 'math', 'helper'], ...}
+// {['layout.js']: ['utils.js', 'math.js', 'helper.js'], ...}
 const permanent = new Set();
 const temporary = new Set();
 const result: string[] = [];
