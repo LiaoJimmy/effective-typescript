@@ -197,15 +197,15 @@ function getNodeClass(node) {
             </marker>
           </defs>
           <!-- layout -> utils -->
-          <line x1="72%" y1="21%" x2="52%" y2="44%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="26%" y1="54%" x2="40%" y2="54%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- layout -> math -->
-          <line x1="70%" y1="21%" x2="25%" y2="21%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="26%" y1="52%" x2="40%" y2="34%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- layout -> helper -->
-          <line x1="70%" y1="21%" x2="25%" y2="71%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="26%" y1="56%" x2="40%" y2="74%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- canvas -> utils -->
-          <line x1="72%" y1="71%" x2="52%" y2="46%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="26%" y1="74%" x2="40%" y2="56%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- utils -> tickers -->
-          <line x1="40%" y1="46%" x2="25%" y2="46%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="58%" y1="54%" x2="72%" y2="54%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
         </svg>
       </div>
 
