@@ -25,26 +25,19 @@ const columns = [
   }
 ]
 
-// DFS traversal states for each step
+// DFS traversal completion steps
 const steps = [
-  { visited: [], visiting: [] },
-  { visited: [], visiting: ['layout.js'] },
-  { visited: [], visiting: ['layout.js', 'utils.js'] },
-  { visited: [], visiting: ['layout.js', 'utils.js', 'tickers.js'] },
-  { visited: ['tickers.js'], visiting: ['layout.js', 'utils.js'] },
-  { visited: ['tickers.js', 'utils.js'], visiting: ['layout.js'] },
-  { visited: ['tickers.js', 'utils.js'], visiting: ['layout.js', 'math.js'] },
-  { visited: ['tickers.js', 'utils.js', 'math.js'], visiting: ['layout.js'] },
-  { visited: ['tickers.js', 'utils.js', 'math.js'], visiting: ['layout.js', 'helper.js'] },
-  { visited: ['tickers.js', 'utils.js', 'math.js', 'helper.js'], visiting: ['layout.js'] },
-  { visited: ['tickers.js', 'utils.js', 'math.js', 'helper.js', 'layout.js'], visiting: [] },
+  [],
+  ['layout.js'],
+  ['layout.js', 'utils.js'],
+  ['layout.js', 'utils.js', 'tickers.js'],
+  ['layout.js', 'utils.js', 'tickers.js', 'math.js'],
+  ['layout.js', 'utils.js', 'tickers.js', 'math.js', 'helper.js'],
 ];
 
 const currentStep = ref(0)
 
-const currentState = computed(() => steps[currentStep.value]);
-const visitedNodes = computed(() => currentState.value.visited);
-const visitingNodes = computed(() => currentState.value.visiting);
+const completedNodes = computed(() => steps[currentStep.value]);
 
 function nextStep() {
   if (currentStep.value < steps.length - 1) {
@@ -57,11 +50,8 @@ function reset() {
 }
 
 function getNodeClass(nodeName) {
-  if (visitedNodes.value.includes(nodeName)) {
+  if (completedNodes.value.includes(nodeName)) {
     return 'bg-teal-500 text-white'; // Visited (green)
-  }
-  if (visitingNodes.value.includes(nodeName)) {
-    return 'bg-yellow-500 text-white'; // Visiting (yellow)
   }
   return 'bg-gray-300 text-gray-800'; // Not visited (gray)
 }

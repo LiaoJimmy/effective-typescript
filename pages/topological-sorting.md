@@ -318,7 +318,7 @@ graph LR
 <h2> Question: What’s order of visited files? </h2>
 </v-click>
 <v-click>
-DFS Result: ['tickers.js', 'utils.js', 'math.js', 'helper.js', 'layout.js']
+DFS Result: ['layout.js', 'utils.js', 'tickers.js', 'math.js', 'helper.js']
 </v-click>
 
 ---
@@ -366,7 +366,7 @@ graph LR
 ```ts {1-8|10-20}
 interface AdjacentList { [key: string]: string[]; }
 const graph: AdjacentList = {
-    ['layout.js']: ['utils', 'math', 'helper.js'],
+    ['layout.js']: ['utils.js', 'math.js', 'helper.js'],
     ['utils.js']: ['tickers.js'],
     ['tickers.js']: [],
     ['math.js']: [],
