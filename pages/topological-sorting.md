@@ -495,4 +495,23 @@ align: rm-lm
 
 :: content ::
 
+<TopologicalSorting />
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
 <h1> Topological Sorting Problems </h1>
