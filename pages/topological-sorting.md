@@ -125,6 +125,25 @@ align: rm-lm
 
 :: content ::
 
+<TopologicalSortingResult />
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
 <h1> Graph </h1>
 
 A graph data structure is a way to represent relationships between objects.
@@ -294,6 +313,25 @@ graph LR
 <v-click>
 DFS Result: ['tickers.js', 'utils.js', 'math.js', 'helper.js', 'layout.js']
 </v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<DFS />
 
 ---
 transition: fade-out
