@@ -217,7 +217,14 @@ align: rm-lm
 
 # Item 61
 
-<ChiikawaItem2e text="Item 82 (2e)" />
+```mermaid {theme: 'default'}
+graph LR
+    A[layout.js] --> B[utils.js];
+    B --> C[tickers.js];
+    A --> E[math.js];
+    A --> F[helper.js];
+    G[canvas.js] --> B;
+```
 
 :: content ::
 
@@ -225,21 +232,21 @@ align: rm-lm
 
 A list where each element corresponds to a vertex, and the list contains the vertices adjacent to it.
 
-```ts {1-8|10-19}
+```ts {1-7|9-11|12-13|12-19}
 const edges = [
     ['layout.js', 'utils.js'],
     ['layout.js', 'math.js'],
     ['layout.js', 'helper.js'],
     ['canvas.js', 'utils.js'],
-    ['model.js', 'utils.js'],
     ['utils.js', 'tickers.js']
 ];
 
-interface AdjacentList { [key: string]: string[]; }
+interface AdjacentList {
+    [key: string]: string[];
+}
 const graph: AdjacentList = {
     ['layout.js']: ['utils.js', 'math.js', 'helper.js'],
     ['canvas.js']: ['utils.js'],
-    ['model.js']: ['utils.js'],
     ['utils.js']: ['tickers.js'],
     ['tickers.js']: [],
     ['math.js']: [],

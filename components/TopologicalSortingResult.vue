@@ -51,13 +51,13 @@ function reset() {
   <div class="p-4 font-sans flex flex-col items-center">
     <div class="flex items-center mb-4">
       <button @click="nextStep" :disabled="currentStep >= layers.length" class="w-24 bg-blue-500 text-white text-sm font-bold py-2 px-4 rounded mr-2 disabled:bg-gray-400 disabled:cursor-not-allowed">
-        下一步
+        Next
       </button>
       <button @click="reset" class="w-24 text-sm bg-pink-500 text-white font-bold py-2 px-4 rounded">
-        重置
+        Reset
       </button>
       <div class="text-center text-sm ml-4">
-        步驟 {{ currentStep }} / {{ layers.length }}
+        Step: {{ currentStep }} / {{ layers.length }}
       </div>
     </div>
 
