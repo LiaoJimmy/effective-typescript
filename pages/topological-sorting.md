@@ -459,7 +459,7 @@ const permanent = new Set();
 const temporary = new Set();
 const result: string[] = [];
 
-const topologicalSort = (node: string) => {
+const visit = (node: string) => {
     if (permanent.has(node)) return;
     if (temporary.has(node)) {
         console.log('Find cycle');
@@ -468,13 +468,13 @@ const topologicalSort = (node: string) => {
 
     temporary.add(node);
 
-    for (const child of graph[node]) topologicalSort(child);
+    for (const child of graph[node]) visit(child);
 
     permanent.add(node);
     result.push(node);
 }
 
-for (const vertex of Object.keys(graph)) topologicalSort(vertex);
+for (const vertex of Object.keys(graph)) visit(vertex);
 console.log(result);
 ```
 
