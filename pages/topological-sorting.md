@@ -417,7 +417,7 @@ const result: string[] = [];
 const topologicalSort = (node: string) => {
     if (permanent.has(node)) return;
     if (temporary.has(node)) {
-        console.log('find cycle');
+        console.log('Find cycle');
         return;
     }
 
