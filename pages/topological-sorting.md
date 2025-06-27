@@ -512,4 +512,22 @@ align: rm-lm
 
 :: content ::
 
-<h1> Topological Sorting Problems </h1>
+# Topological Sorting Problems
+
+<ul>
+    <li>
+        <a hre="https://leetcode.com/problems/course-schedule-ii/">
+            210. Course Schedule II (Medium)
+        </a>
+    </li>
+    <li>
+        <a hre="https://leetcode.com/problems/find-eventual-safe-states/">
+            802. Find Eventual Safe States (Medium)
+        </a>
+    </li>
+    <li>
+        <a hre="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/">
+            1203. Sort Items by Groups Respecting Dependencies (Hard)
+        </a>
+    </li>
+</ul>
