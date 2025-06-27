@@ -516,17 +516,17 @@ align: rm-lm
 
 <ul>
     <li>
-        <a hre="https://leetcode.com/problems/course-schedule-ii/">
+        <a href="https://leetcode.com/problems/course-schedule-ii/">
             210. Course Schedule II (Medium)
         </a>
     </li>
     <li>
-        <a hre="https://leetcode.com/problems/find-eventual-safe-states/">
+        <a href="https://leetcode.com/problems/find-eventual-safe-states/">
             802. Find Eventual Safe States (Medium)
         </a>
     </li>
     <li>
-        <a hre="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/">
+        <a href="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/">
             1203. Sort Items by Groups Respecting Dependencies (Hard)
         </a>
     </li>
