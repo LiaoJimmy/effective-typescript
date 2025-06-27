@@ -67,7 +67,7 @@ function getNodeClass(nodeName) {
       <button @click="reset" class="w-24 text-sm bg-pink-500 text-white font-bold py-2 px-4 rounded">
         Reset
       </button>
-      <div class="text-center text-sm ml-4">
+      <div class="text-center text-sm ml-4 w-24">
         Step: {{ currentStep }} / {{ steps.length - 1 }}
       </div>
     </div>

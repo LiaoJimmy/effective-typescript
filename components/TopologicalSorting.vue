@@ -12,12 +12,12 @@ const graph = {
 const allNodes = Object.keys(graph);
 
 const nodePositions = {
-  'layout': { top: '50%', left: '5%' },
-  'canvas': { top: '70%', left: '5%' },
-  'utils': { top: '50%', left: '38%' },
+  'layout': { top: '25%', left: '10%' },
+  'canvas': { top: '50%', left: '10%' },
+  'utils': { top: '50%', left: '42%' },
   'tickers': { top: '50%', left: '70%' },
-  'math': { top: '30%', left: '38%' },
-  'helper': { top: '70%', left: '38%' },
+  'math': { top: '25%', left: '42%' },
+  'helper': { top: '75%', left: '42%' },
 };
 
 const steps = [];
@@ -170,16 +170,16 @@ function getNodeClass(node) {
       <button @click="reset" class="w-24 text-sm bg-pink-500 text-white font-bold py-2 px-4 rounded">
         Reset
       </button>
-      <div class="text-center text-sm ml-4">
+      <div class="text-center text-sm ml-4 w-24">
         Step: {{ currentStep + 1 }} / {{ steps.length }}
       </div>
     </div>
 
     <!-- Main Content -->
-    <div class="w-full max-w-4xl flex space-x-4 mt-2">
+    <div class="w-full max-w-4xl flex flex-col space-y-4 mt-2">
       <!-- Graph Visualization -->
-      <div class="w-2/3 border rounded-lg p-4 relative h-112">
-        <h3 class="text-lg font-bold mb-2 text-center">Graph Nodes</h3>
+      <div class="w-full border rounded-lg p-2 relative h-48">
+        <h5 class="text-lg font-bold mb-2 text-center">Graph Nodes</h5>
         
         <!-- Nodes -->
         <div v-for="node in allNodes" :key="node"
@@ -197,53 +197,53 @@ function getNodeClass(node) {
             </marker>
           </defs>
           <!-- layout -> utils -->
-          <line x1="26%" y1="54%" x2="40%" y2="54%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="24%" y1="36%" x2="43%" y2="56%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- layout -> math -->
-          <line x1="26%" y1="52%" x2="40%" y2="34%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="24%" y1="34%" x2="43%" y2="34%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- layout -> helper -->
-          <line x1="26%" y1="56%" x2="40%" y2="74%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="24%" y1="38%" x2="43%" y2="84%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- canvas -> utils -->
-          <line x1="26%" y1="74%" x2="40%" y2="56%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="24%" y1="60%" x2="43%" y2="60%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
           <!-- utils -> tickers -->
-          <line x1="58%" y1="54%" x2="72%" y2="54%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
+          <line x1="56%" y1="60%" x2="71%" y2="60%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-topo)" />
         </svg>
       </div>
 
       <!-- Sets Display -->
-      <div class="w-1/3 flex flex-col space-y-4">
+      <div class="w-full flex flex-col space-y-2">
         <!-- Temporary Set -->
-        <div class="border rounded-lg p-4 flex-1">
+        <div class="w-full border rounded-lg p-2 pl-3">
           <h5 class="text-lg font-bold mb-2">Temporary</h5>
-          <div class="flex flex-wrap gap-2 min-h-[2.5rem]">
+          <div class="flex flex-wrap gap-2 min-h-[1.5rem]">
             <span v-for="node in Array.from(currentDisplayState.temporary)" :key="node"
                   class="px-2 py-1 bg-blue-500 text-white rounded-full text-xs h-1.5rem">
-              {{ node }}
+              {{ node }}.js
             </span>
-            <span v-if="currentDisplayState.temporary.size === 0" class="text-sm text-gray-500 italic">Empty</span>
+            <span v-if="currentDisplayState.temporary.size === 0" class="text-xs text-gray-500 italic">Empty</span>
           </div>
         </div>
 
         <!-- Permanent Set -->
-        <div class="border rounded-lg p-4 flex-1">
+        <div class="w-full border rounded-lg p-2 pl-3">
           <h5 class="text-lg font-bold mb-2">Permanent</h5>
-          <div class="flex flex-wrap gap-2 min-h-[2.5rem]">
+          <div class="flex flex-wrap gap-2 min-h-[1.5rem]">
             <span v-for="node in Array.from(currentDisplayState.permanent)" :key="node"
                   class="px-2 py-1 bg-green-500 text-white rounded-full text-xs h-1.5rem">
-              {{ node }}
+              {{ node }}.js
             </span>
-             <span v-if="currentDisplayState.permanent.size === 0" class="text-gray-500 italic">Empty</span>
+             <span v-if="currentDisplayState.permanent.size === 0" class="text-xs text-gray-500 italic">Empty</span>
           </div>
         </div>
 
         <!-- Result List -->
-        <div class="border rounded-lg p-4 flex-1">
-          <h5 class="text-lg font-bold mb-2">Result</h5>
-          <div class="flex flex-wrap gap-2 min-h-[2.5rem]">
+        <div class="w-full border rounded-lg p-2 pl-3">
+          <h5 class="text-lg font-bold mb-2">Topological Sorting Result</h5>
+          <div class="flex flex-wrap gap-2 min-h-[1.5rem]">
             <span v-for="node in currentDisplayState.result" :key="node"
-                  class="px-2 py-1 bg-purple-500 text-white rounded-full text-xs h-1.5rem">
-              {{ node }}
+                  class="px-2 py-1 bg-green-500 text-white rounded-full text-xs h-1.5rem">
+              {{ node }}.js
             </span>
-             <span v-if="currentDisplayState.result.length === 0" class="text-gray-500 italic">Empty</span>
+             <span v-if="currentDisplayState.result.length === 0" class="text-xs text-gray-500 italic">Empty</span>
           </div>
         </div>
       </div>

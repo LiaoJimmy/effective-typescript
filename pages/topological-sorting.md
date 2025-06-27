@@ -215,8 +215,6 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 61
-
 ```mermaid {theme: 'default'}
 graph LR
     A[layout.js] --> B[utils.js];
