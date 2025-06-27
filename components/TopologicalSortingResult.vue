@@ -13,9 +13,9 @@ const layers = [
   {
     id: 2,
     nodes: [
+      { id: 'B', name: 'utils.js' },
       { id: 'E', name: 'math.js' },
       { id: 'F', name: 'helper.js' },
-      { id: 'B', name: 'utils.js' },
     ]
   },
   {
@@ -65,7 +65,7 @@ function reset() {
       <!-- Visual representation of layers -->
       <div class="flex justify-around h-full">
         <!-- Layer 1 -->
-        <div class="flex flex-col justify-around">
+        <div class="flex flex-col justify-evenly">
           <div v-for="node in layers[0].nodes" :key="node.id"
                class="p-3 rounded-lg text-center transition-colors duration-300 w-32"
                :class="highlightedNodes.includes(node.name) ? 'bg-teal-500 text-white' : 'bg-gray-300 text-gray-800'">
@@ -100,15 +100,15 @@ function reset() {
           </marker>
         </defs>
         <!-- A -> B -->
-        <line x1="30%" y1="27.5%" x2="40%" y2="75%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
+        <line x1="30%" y1="38%" x2="40%" y2="75%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
         <!-- B -> C -->
-        <line x1="60%" y1="75%" x2="70%" y2="50%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
+        <line x1="60%" y1="20%" x2="72%" y2="50%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
         <!-- A -> E -->
-        <line x1="30%" y1="27.5%" x2="40%" y2="22.5%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
+        <line x1="30%" y1="28%" x2="40%" y2="20%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
         <!-- A -> F -->
-        <line x1="30%" y1="27.5%" x2="40%" y2="50%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
+        <line x1="30%" y1="32%" x2="40%" y2="50%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
         <!-- G -> B -->
-        <line x1="30%" y1="77%" x2="40%" y2="77%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
+        <line x1="30%" y1="68%" x2="40%" y2="80%" stroke="currentColor" class="text-black-400" stroke-width="1.5" marker-end="url(#arrowhead-vue)" />
       </svg>
     </div>
   </div>
