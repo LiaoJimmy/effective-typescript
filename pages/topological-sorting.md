@@ -201,18 +201,55 @@ align: rm-lm
 
 A path that starts and ends at the same vertex.
 
-<v-click>
 ```mermaid {theme: 'default'}
 graph LR
     A[layout.js] --> B[utils.js];
     B --> C[tickers.js];
     C --> A[layout.js];
 ```
-</v-click>
 
 <v-click>
-<h2> Question: Can we topological sort for a cycle graph? </h2>
+<h2> no-cycle rule </h2>
+<ul>
+    <li>
+        <a href="https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-cycle.md">ESLint</a>
+    </li>
+    <li>
+        <a href="https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle"> Oxc </a>
+    </li>
+</ul>
 </v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: pink-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 61
+
+<ChiikawaItem2e text="Item 82 (2e)" />
+
+:: content ::
+
+<h1> Cycle </h1>
+
+A path that starts and ends at the same vertex.
+
+```mermaid {theme: 'default'}
+graph LR
+    A[layout.js] --> B[utils.js];
+    B --> C[tickers.js];
+    C --> A[layout.js];
+```
+
+<br />
+<h2> Question: Can we topological sort for a cycle graph? </h2>
 <v-click>
 <br />
 A topological ordering is possible if and only if the graph has no directed cycles.
