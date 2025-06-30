@@ -212,10 +212,10 @@ graph LR
 <h2> no-cycle rule </h2>
 <ul>
     <li>
-        <a href="https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-cycle.md">ESLint</a>
+        <a href="https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-cycle.md" target="_blank">ESLint</a>
     </li>
     <li>
-        <a href="https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle"> Oxc </a>
+        <a href="https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle" target="_blank"> Oxc </a>
     </li>
 </ul>
 </v-click>
@@ -567,17 +567,17 @@ align: rm-lm
 
 <ul>
     <li>
-        <a href="https://leetcode.com/problems/course-schedule-ii/">
+        <a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank">
             210. Course Schedule II (Medium)
         </a>
     </li>
     <li>
-        <a href="https://leetcode.com/problems/find-eventual-safe-states/">
+        <a href="https://leetcode.com/problems/find-eventual-safe-states/" target="_blank">
             802. Find Eventual Safe States (Medium)
         </a>
     </li>
     <li>
-        <a href="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/">
+        <a href="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/" target="_blank"
             1203. Sort Items by Groups Respecting Dependencies (Hard)
         </a>
     </li>
