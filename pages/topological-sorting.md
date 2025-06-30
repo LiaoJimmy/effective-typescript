@@ -577,7 +577,7 @@ align: rm-lm
         </a>
     </li>
     <li>
-        <a href="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/" target="_blank"
+        <a href="https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/" target="_blank">
             1203. Sort Items by Groups Respecting Dependencies (Hard)
         </a>
     </li>
