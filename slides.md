@@ -40,7 +40,7 @@ align: l
 
 ## Today slides
 
-- <Link to="125">Item 59, 62(and Xor), 63, 71</Link>
+- <Link to="125">Item 59, 62, XOR, 63, 71</Link>
 
 ## Archived
 
