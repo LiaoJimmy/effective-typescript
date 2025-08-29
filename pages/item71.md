@@ -136,7 +136,7 @@ console.log(abc);
 <v-click>
 <br />
 <h2> “knock out” methods and mark them @deprecated </h2>
-```ts {1-4|all}
+```ts {1-5|all}
 // declarations/ban-set-string-constructor.d.ts:
 interface SetConstructor {
   /** @deprecated */

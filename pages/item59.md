@@ -36,6 +36,7 @@ function drawShape(shape: Shape) {
       shape;
   }
 }
+drawShape({ type: 'box' });
 ```
 ---
 transition: fade-out
@@ -74,6 +75,7 @@ function drawShape(shape: Shape) {
       shape;
   }
 }
+drawShape({ type: 'box' });
 ```
 
 ---
@@ -117,6 +119,7 @@ function drawShape(shape: Shape) {
       assertUnreachable(shape);
   }
 }
+drawShape({ type: 'box' });
 ```
 
 ---
@@ -143,6 +146,9 @@ It protects us from surprise values at runtime, not just during type checking.
 function assertUnreachable(value: never): never {
   throw new Error(`Missed a case! ${value}`);
 }
+
+declare const NeverShape: never;
+assertUnreachable(NeverShape);
 ```
 
 <v-click>

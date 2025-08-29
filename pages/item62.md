@@ -157,9 +157,5 @@ function buildURL<Path extends keyof RouteQueryParams>(
   return route + (params ? `?${new URLSearchParams(params)}` : '');
 }
 
-buildURL('/', {query: 'recursion'});
-//            ~~~~~~~~~~~~~~~~~~~~ Expected 1 arguments, but got 2.
-buildURL('/', null);
-//            ~~~~ Expected 1 arguments, but got 2.
-buildURL('/');  // ok
+buildURL('/search', {query: 'recursion'});
 ```

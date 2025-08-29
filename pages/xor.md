@@ -14,11 +14,17 @@ align: rm-lm
 
 :: content ::
 
-# Xor Properties
+# XOR Properties
 <br />
-```{1-2|4-5|7-8|10-11|13-14|16-17}
+```{1-2|4-8|10-11|13-14|16-17|19-20|22-23}
 1 ^ 1 = 0
 0 ^ 1 = 1
+
+1 ^ 5 = 4
+// 1: 0|0|1 
+// 5: 1|0|1
+// ----|-|-
+// 4: 1|0|0
 
 Commutative Law（交換律）:
 p ^ q = q ^ p
@@ -34,34 +40,6 @@ p ^ p = 0
 
 Involution（對合運算）:
 p ^ q ^ q = p ^ 0 = p
-```
-
----
-transition: fade-out
-layout: side-title
-side: l
-color: sky-light
-titlewidth: is-4
-align: rm-lm
----
-:: title ::
-
-# XOR
-
-<HachiwareItem2e />
-
-:: content ::
-
-# Toggle a bit
-<br />
-```ts
-// 1 ^ 1 = 0
-// 0 ^ 1 = 1
-
-const num = 6; // (110)2
-num ^ (1 << 0); // (111)2 = 7
-num ^ (1 << 1); // (100)2 = 4
-num ^ (1 << 2); // (010)2 = 2
 ```
 
 ---
@@ -136,7 +114,7 @@ Numbers with more than 32 bits get their most significant bits discarded.
 
 For example, the following integer with more than 32 bits will be converted to a 32-bit integer:
 
-```
+```{1-2|4-5|7-8|10-11}
 Before: 1110 0110 1111 1010 0000 0000 0000 0110 0000 0000 0001
 // 15_872_588_537_857
 
@@ -172,9 +150,13 @@ align: rm-lm
 <HachiwareItem2e />
 
 :: content ::
-# Bitwise in real world
+# Do you use bitwise in real world?
+<v-click>
 Bitwise is often used in performance-critical code to store multiple boolean flags in a single integer.
+</v-click>
 
+<br />
+<v-click>
 <b>React.js</b>
 ```ts
 // react-dom-bindings/src/events/EventSystemFlags.js
@@ -184,7 +166,9 @@ export const IS_CAPTURE_PHASE = 1 << 2;
 export const IS_PASSIVE = 1 << 3;
 export const IS_LEGACY_FB_SUPPORT_MODE = 1 << 4;
 ```
+</v-click>
 
+<v-click>
 <b>Vue.js</b>
 ```ts
 // core/packages/shared/src/patchFlags.ts
@@ -197,3 +181,4 @@ export enum PatchFlags {
   // ...
 }
 ```
+</v-click>
