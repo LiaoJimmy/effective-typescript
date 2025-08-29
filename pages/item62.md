@@ -9,31 +9,37 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 23
+# Item 62
 
-<UsagiItem2e text="Item 21 (2e)"/>
+<UsagiItem2e />
 
 :: content ::
 
-# Create Objects All at Once
+# Item 62: Use Rest Parameters and Tuple Types to Model Variadic Functions
 
 ```ts {monaco}
-const point = {};
-point.x = 3;
-point.y = 4;
-```
+interface RouteQueryParams {
+  '/': null,
+  '/search': { query: string; language?: string; }
+  // ...
+}
 
-<v-click>
-<br>
-Build up objects field by field in a type-safe way.
-```ts {monaco}
-interface Point { x: number, y: number }
-const point: Point = {
-  x: 3,
-  y: 4
-};
+function buildURL<Path extends keyof RouteQueryParams>(
+  route: Path,
+  params: RouteQueryParams[Path]
+) {
+  return route + (params ? `?${new URLSearchParams(params)}` : '');
+}
+
+buildURL('/search', {query: 'do a barrel roll'})
+buildURL('/search', {query: 'do a barrel roll', language: 'en'})
+buildURL('/', {query: 'recursion'});  // error, good!
+//            ~~~~~~~~~~~~~~~~~~~~ Argument of type '{ query: string; }' is
+//                                 not assignable to parameter of type 'null'
+buildURL('/', null);  // ok
+buildURL('/');  // we'd like this to be allowed
+// ~~~~~ Expected 2 arguments, but got 1.
 ```
-</v-click>
 
 ---
 transition: fade-out
@@ -46,22 +52,114 @@ align: rm-lm
 ---
 :: title ::
 
-# Item 23
+# Item 62
 
-<UsagiItem2e text="Item 21 (2e)"/>
+<UsagiItem2e />
 
 :: content ::
 
-# Conditionally add a property in a type-safe way
+# Use a conditional type and rest parameters
 
 ```ts {monaco}
-const getPresidentName = (hasMiddle = true) => {
-  const firstLast = { first: 'Harry', last: 'Truman' };
-  const president = {
-    ...firstLast,
-    ...(hasMiddle ? { middle: 'S' } : {})
-  };
-  return president;
+interface RouteQueryParams {
+  '/': null,
+  '/search': { query: string; language?: string; }
+  // ...
 }
-getPresidentName();
+
+function buildURL<Path extends keyof RouteQueryParams>(
+  route: Path,
+  ...args: (
+      RouteQueryParams[Path] extends null
+      ? []
+      : [params: RouteQueryParams[Path]]
+    )
+) {
+  const params = args ? args[0] : null;
+  return route + (params ? `?${new URLSearchParams(params)}` : '');
+}
+
+buildURL('/', {query: 'recursion'});
+//            ~~~~~~~~~~~~~~~~~~~~ Expected 1 arguments, but got 2.
+buildURL('/', null);
+//            ~~~~ Expected 1 arguments, but got 2.
+buildURL('/');  // ok
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: yellow-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 62
+
+<UsagiItem2e />
+
+:: content ::
+
+# Label parameter name
+
+```ts {3-7}
+function buildURL<Path extends keyof RouteQueryParams>(
+  route: Path,
+  ...args: (
+      RouteQueryParams[Path] extends null
+      ? []
+      : [params: RouteQueryParams[Path]]
+    )
+) {
+  const params = args ? args[0] : null;
+  return route + (params ? `?${new URLSearchParams(params)}` : '');
+}
+```
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: yellow-light
+titlewidth: is-4
+align: rm-lm
+
+---
+:: title ::
+
+# Item 62
+
+<UsagiItem2e />
+
+:: content ::
+
+# Remove label parameter name
+
+```ts {monaco}
+interface RouteQueryParams {
+  '/': null,
+  '/search': { query: string; language?: string; }
+  // ...
+}
+
+function buildURL<Path extends keyof RouteQueryParams>(
+  route: Path,
+  ...args: (
+      RouteQueryParams[Path] extends null
+      ? []
+      : [RouteQueryParams[Path]]
+    )
+) {
+  const params = args ? args[0] : null;
+  return route + (params ? `?${new URLSearchParams(params)}` : '');
+}
+
+buildURL('/', {query: 'recursion'});
+//            ~~~~~~~~~~~~~~~~~~~~ Expected 1 arguments, but got 2.
+buildURL('/', null);
+//            ~~~~ Expected 1 arguments, but got 2.
+buildURL('/');  // ok
 ```

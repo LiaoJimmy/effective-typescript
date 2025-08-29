@@ -143,6 +143,10 @@ src: ./pages/item63.md
 ---
 
 ---
+src: ./pages/xor.md
+---
+
+---
 src: ./pages/item71.md
 ---
 
