@@ -14,8 +14,10 @@ align: rm-lm
 
 :: content ::
 
-# XOR Properties
-<br />
+# XOR Operator
+
+With two inputs, XOR is true if and only if the inputs differ (one is true, one is false).
+
 ```{1-4|6-10}
 1 ^ 1 = 0
 0 ^ 0 = 0
