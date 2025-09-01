@@ -90,7 +90,7 @@ align: rm-lm
 
 :: content ::
 
-# Use an optional never type to disallow a property
+# Use an optional never type to model Exclusive Or
 
 ```ts {monaco}
 interface OnlyThingOne {

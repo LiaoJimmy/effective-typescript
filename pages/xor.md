@@ -156,6 +156,7 @@ Bitwise is often used in performance-critical code to store multiple boolean fla
 </v-click>
 
 <br />
+<br />
 <v-click>
 <b>React.js</b>
 ```ts
@@ -169,6 +170,7 @@ export const IS_LEGACY_FB_SUPPORT_MODE = 1 << 4;
 </v-click>
 
 <v-click>
+<br />
 <b>Vue.js</b>
 ```ts
 // core/packages/shared/src/patchFlags.ts

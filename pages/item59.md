@@ -55,7 +55,7 @@ align: rm-lm
 
 :: content ::
 
-# Error of omission after adding one case
+# Error of omission after adding one type
 
 ```ts {monaco}
 interface Box { type: 'box'; }
@@ -95,7 +95,7 @@ align: rm-lm
 
 :: content ::
 
-# No value is assignable to the never type
+# Exhaustiveness Checking
 
 ```ts {monaco}
 interface Box { type: 'box'; }

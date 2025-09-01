@@ -105,7 +105,7 @@ const cacheExpirationTime = response.lastModified + 3600;  // ok
 
 <br />
 <v-click>
-Practice: Change fetch API’s Response.prototype.json() return unknown
+<b>Practice: Change fetch API’s Response.prototype.json() return unknown</b>
 </v-click>
 
 ---
