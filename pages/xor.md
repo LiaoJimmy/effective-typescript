@@ -16,16 +16,38 @@ align: rm-lm
 
 # XOR Properties
 <br />
-```{1-2|4-8|10-11|13-14|16-17|19-20|22-23}
+```{1-4|6-10}
 1 ^ 1 = 0
+0 ^ 0 = 0
 0 ^ 1 = 1
+1 ^ 0 = 1
 
 1 ^ 5 = 4
 // 1: 0|0|1 
 // 5: 1|0|1
 // ----|-|-
 // 4: 1|0|0
+```
 
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+---
+:: title ::
+
+# XOR
+
+<HachiwareItem2e />
+
+:: content ::
+
+# XOR Properties
+<br />
+```{1-2|4-5|7-8|10-11|13-14}
 Commutative Law（交換律）:
 p ^ q = q ^ p
 
@@ -59,20 +81,53 @@ align: rm-lm
 :: content ::
 
 # Toggle a bit
+
 <br />
-```ts
-// 1 ^ 1 = 0
-// 0 ^ 1 = 1
+
+```ts {1-4|6-11|13-18|19-24}
+1 ^ 1 = 0
+0 ^ 0 = 0
+0 ^ 1 = 1
+1 ^ 0 = 1
 
 const num = 6; // (110)2
-num ^ (1 << 0); // (111)2 = 7
+num ^ (1 << 0); // 7
+// 6: 1|1|0 
+// 1: 0|0|1
+// ----|-|-
+// 4: 1|1|1
+
 num ^ (1 << 1); // (100)2 = 4
+// 6: 1|1|0
+// 2: 0|1|0
+// ----|-|-
+// 4: 1|0|0
+
 num ^ (1 << 2); // (010)2 = 2
+// 6: 1|1|0
+// 4: 1|0|0
+// ----|-|-
+// 2: 0|1|0
 ```
 
-<v-click>
-<br />
-<h2> Practice </h2>
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+---
+:: title ::
+
+# XOR
+
+<HachiwareItem2e />
+
+:: content ::
+
+# XOR Problems
+
 <ul>
     <li>
         <a href="https://leetcode.com/problems/reverse-bits/" target="_blank">
@@ -90,7 +145,6 @@ num ^ (1 << 2); // (010)2 = 2
         </a>
     </li>
 </ul>
-</v-click>
 
 ---
 transition: fade-out

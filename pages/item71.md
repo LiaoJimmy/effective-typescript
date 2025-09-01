@@ -133,9 +133,26 @@ const abc = new Set('abc');
 console.log(abc);
 ```
 
-<v-click>
+---
+transition: fade-out
+layout: side-title
+side: l
+color: yellow-light
+titlewidth: is-4
+align: rm-lm
+---
+:: title ::
+
+# Item 71
+
+<UsagiItem2e />
+
+:: content ::
+
+# “knock out” methods and mark them @deprecated
+
 <br />
-<h2> “knock out” methods and mark them @deprecated </h2>
+
 ```ts {1-5|all}
 // declarations/ban-set-string-constructor.d.ts:
 interface SetConstructor {
@@ -146,7 +163,6 @@ interface SetConstructor {
 const s = new Set('abc');
 //    ^? const s: "Error! new Set(string) is banned."
 ```
-</v-click>
 
 ---
 transition: fade-out
