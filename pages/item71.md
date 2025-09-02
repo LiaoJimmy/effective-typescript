@@ -28,7 +28,7 @@ console.log(cacheExpirationTime);
 
 <v-click>
 <br />
-The unknown type was only introduced in TypeScript 3.0, which came out in July of 2018. Enormous amounts of TypeScript code had been written before then, and changing the return type of JSON.parse would have been extremely disruptive.
+The <i>unknown</i> type was only introduced in TypeScript 3.0, which came out in July of 2018. Enormous amounts of TypeScript code had been written before then, and changing the return type of JSON.parse would have been extremely disruptive.
 </v-click>
 
 ---

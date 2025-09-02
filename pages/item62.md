@@ -78,7 +78,7 @@ function buildURL<Path extends keyof RouteQueryParams>(
   const params = args ? args[0] : null;
   return route + (params ? `?${new URLSearchParams(params)}` : '');
 }
-
+buildURL('/search', { query: 'recursion' });
 buildURL('/', {query: 'recursion'});
 //            ~~~~~~~~~~~~~~~~~~~~ Expected 1 arguments, but got 2.
 buildURL('/', null);

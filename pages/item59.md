@@ -179,12 +179,10 @@ Since never is assignable to all other types, you can safely return it, regardle
 interface Box { type: 'box'; }
 interface Circle { type: 'circle'; }
 interface Line { type: 'line'; }
-
 type Shape = Box | Circle | Line;
+
 const calc = (shape: Shape) => 0;
-function assertUnreachable(value: never): never {
-  throw new Error(`Missed a case! ${value}`);
-}
+function assertUnreachable(value: never): never { throw new Error(`Missed a case! ${value}`); }
 
 function getArea(shape: Shape): number {
   switch (shape.type) {
@@ -198,6 +196,7 @@ function getArea(shape: Shape): number {
       return assertUnreachable(shape);  // ok
   }
 }
+getArea({ type: 'box' });
 ```
 
 ---
@@ -236,6 +235,7 @@ function shoot(a: Play, b: Play) {
     console.log('B wins');
   }
 }
+shoot('rock', 'scissors');
 ```
 
 ---
@@ -278,8 +278,7 @@ function shoot(a: Play, b: Play) {
     case 'scissors,rock':
       console.log('B wins');
       break;
-    default:
-      assertUnreachable(pair);
+    default: assertUnreachable(pair);
   }
 }
 shoot('rock', 'paper');

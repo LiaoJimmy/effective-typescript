@@ -86,18 +86,16 @@ align: rm-lm
 
 <br />
 
-```ts {1-4|6-11|13-18|19-24}
+```ts {1-2|4-9|11-16|17-22}
 1 ^ 1 = 0
-0 ^ 0 = 0
 0 ^ 1 = 1
-1 ^ 0 = 1
 
 const num = 6; // (110)2
 num ^ (1 << 0); // 7
 // 6: 1|1|0 
 // 1: 0|0|1
 // ----|-|-
-// 4: 1|1|1
+// 7: 1|1|1
 
 num ^ (1 << 1); // (100)2 = 4
 // 6: 1|1|0
@@ -170,25 +168,63 @@ Numbers with more than 32 bits get their most significant bits discarded.
 
 For example, the following integer with more than 32 bits will be converted to a 32-bit integer:
 
-```{1-2|4-5|7-8|10-11}
+```{1-2|4-5|7-8}
 Before: 1110 0110 1111 1010 0000 0000 0000 0110 0000 0000 0001
 // 15_872_588_537_857
 
 After:                 1010 0000 0000 0000 0110 0000 0000 0001
 // 2_684_379_137
 
-1 << 31; // (10000000000000000000000000000000)2 = 2 ** 31
--2147483648
-
-1 << 30  // (1000000000000000000000000000000)2 = 2 ** 30
+1 << 30 // (1000000000000000000000000000000)2 = 2 ** 30
 1073741824
+```
+
+<br />
+
+<v-click>
+<b>Question: 1 << 31 = ?</b>
+</v-click>
+
+---
+transition: fade-out
+layout: side-title
+side: l
+color: sky-light
+titlewidth: is-4
+align: rm-lm
+---
+:: title ::
+
+# XOR
+
+<HachiwareItem2e />
+
+:: content ::
+
+# Sign Bit: 32nd bit
+
+1 << 31 = -2147483648
+
+<br />
+<b> Representation of Negative Numbers: Two's Complement </b>
+<br />
+
+```{1-2|3-4|5-6|all}
+1 << 31; // (10000000000000000000000000000000)2
+// Two's Complement
+// 1. Subtract 1: 10000000000000000000000000000000 - 1
+//              = 01111111111111111111111111111111
+// 2. Invert the bits: 01111111111111111111111111111111 -> 
+//                     10000000000000000000000000000000 (2 ** 31)
+// 1 << 31 = -2147483648
 ```
 
 <v-click>
 <br />
-<h2> Question: What's about 1 << 32? </h2>
+<b> Question: What's about 1 << 32? </b>
 </v-click>
 
+<br />
 <v-click>
 1 << 32 will be treated as 1 << 0, which is 1.
 </v-click>
@@ -202,6 +238,8 @@ titlewidth: is-4
 align: rm-lm
 ---
 :: title ::
+
+# XOR
 
 <HachiwareItem2e />
 
